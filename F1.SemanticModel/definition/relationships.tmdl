@@ -1,0 +1,105 @@
+relationship AutoDetected_78fd9868-7921-4c56-a197-e91f7eb184d1
+	fromColumn: constructor_results.constructorId
+	toColumn: constructors.constructorId
+
+relationship AutoDetected_1201e0a1-18b2-4310-8e07-a456d3c5188b
+	fromColumn: constructor_standings.constructorId
+	toColumn: constructors.constructorId
+
+relationship acc48d36-3ff0-4aa4-8b14-6bbc8fa288e1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: drivers.dob
+	toColumn: LocalDateTable_1d678f62-6f7e-47f6-866c-d1c401cf1d85.Date
+
+relationship AutoDetected_418f82f6-3cc5-4cab-92f4-8c5a378b6277
+	fromColumn: driver_standings.driverId
+	toColumn: drivers.driverId
+
+relationship AutoDetected_9bbddc15-139a-4131-9924-b933e7b220ee
+	fromColumn: lap_times.driverId
+	toColumn: drivers.driverId
+
+relationship AutoDetected_a1e082fd-5d7b-4e83-b1a2-5a78c89a93fe
+	fromColumn: pit_stops.driverId
+	toColumn: drivers.driverId
+
+relationship AutoDetected_29d2a46f-6894-4a69-8793-1c738084571c
+	fromColumn: qualifying.constructorId
+	toColumn: constructors.constructorId
+
+relationship AutoDetected_7af5c586-5530-4c22-bacd-ac7477840bdb
+	fromColumn: qualifying.driverId
+	toColumn: drivers.driverId
+
+relationship 67d2defb-b21f-4776-931a-5beec278ee9f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: races.date
+	toColumn: LocalDateTable_c4fcf2d5-1298-4b9d-ae8d-6eb4ae1e4fb4.Date
+
+relationship AutoDetected_3f35c04d-3a04-459f-838d-81a99c294b87
+	fromColumn: races.circuitId
+	toColumn: circuits.circuitId
+
+relationship AutoDetected_d446bef1-605a-455d-ba62-91e6090bf62c
+	fromColumn: constructor_results.raceId
+	toColumn: races.raceId
+
+relationship AutoDetected_084e1f82-bfbd-4318-b505-e79b26120a05
+	fromColumn: constructor_standings.raceId
+	toColumn: races.raceId
+
+relationship AutoDetected_76c1a2c7-96aa-40b3-aed0-526c3d420293
+	fromColumn: driver_standings.raceId
+	toColumn: races.raceId
+
+relationship AutoDetected_08339357-ff7f-41a1-9af7-0730ed9be81e
+	fromColumn: lap_times.raceId
+	toColumn: races.raceId
+
+relationship AutoDetected_b130151b-d6c8-4445-ba22-1cadcf20b4c7
+	fromColumn: pit_stops.raceId
+	toColumn: races.raceId
+
+relationship AutoDetected_f7fe15c9-6207-46aa-8eff-a77702c5991e
+	fromColumn: qualifying.raceId
+	toColumn: races.raceId
+
+relationship AutoDetected_5eaf82b4-a3c6-467f-b68b-7178474d8753
+	fromColumn: results.raceId
+	toColumn: races.raceId
+
+relationship AutoDetected_ed9f98fb-a63c-4727-98df-4d6903ab3dc3
+	fromColumn: results.constructorId
+	toColumn: constructors.constructorId
+
+relationship AutoDetected_94da21f0-ee2f-4d88-9b40-bb9f9a071e64
+	fromColumn: results.driverId
+	toColumn: drivers.driverId
+
+relationship AutoDetected_391af6eb-afed-4d31-b6d2-d577d1aeeecc
+	fromColumn: sprint_results.raceId
+	toColumn: races.raceId
+
+relationship AutoDetected_b8d2a9a2-4fb8-402a-95f8-45124f524bbe
+	fromColumn: sprint_results.constructorId
+	toColumn: constructors.constructorId
+
+relationship AutoDetected_3a3ef0c3-968b-47a2-ab5b-420d7ab33d5a
+	fromColumn: sprint_results.driverId
+	toColumn: drivers.driverId
+
+relationship AutoDetected_efa0015e-bd3e-4599-8fc3-dcbafea89081
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: sprint_results.resultId
+	toColumn: results.resultId
+
+relationship AutoDetected_f183a7d7-5b12-4791-bec4-80970a8151a9
+	fromColumn: results.statusId
+	toColumn: status.statusId
+
+relationship AutoDetected_1752d74e-d7c6-4393-b676-934abc9b4211
+	fromColumn: sprint_results.statusId
+	toColumn: status.statusId
+

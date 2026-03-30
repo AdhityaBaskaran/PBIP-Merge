@@ -1,0 +1,191 @@
+table results
+	lineageTag: ad88cc72-d54f-43ed-8af3-33810e0888e8
+
+	column resultId
+		dataType: int64
+		formatString: 0
+		lineageTag: 84532bcf-858e-4050-9875-ad1623009136
+		summarizeBy: count
+		sourceColumn: resultId
+
+		annotation SummarizationSetBy = Automatic
+
+	column raceId
+		dataType: int64
+		formatString: 0
+		lineageTag: 511c5840-2e69-4eca-b903-fbbbe446c2ed
+		summarizeBy: none
+		sourceColumn: raceId
+
+		annotation SummarizationSetBy = Automatic
+
+	column driverId
+		dataType: int64
+		formatString: 0
+		lineageTag: 5850c8fd-8299-4bc5-b456-e1aa61861fd6
+		summarizeBy: none
+		sourceColumn: driverId
+
+		annotation SummarizationSetBy = Automatic
+
+	column constructorId
+		dataType: int64
+		formatString: 0
+		lineageTag: cb04a813-5d62-47a6-8551-461308d91e08
+		summarizeBy: none
+		sourceColumn: constructorId
+
+		annotation SummarizationSetBy = Automatic
+
+	column number
+		dataType: int64
+		formatString: 0
+		lineageTag: d879c13f-696b-4f28-b802-f7532b3e4998
+		summarizeBy: sum
+		sourceColumn: number
+
+		annotation SummarizationSetBy = Automatic
+
+	column grid
+		dataType: int64
+		formatString: 0
+		lineageTag: 33dc5d1d-a4da-4d27-9701-23668e2df93c
+		summarizeBy: sum
+		sourceColumn: grid
+
+		annotation SummarizationSetBy = Automatic
+
+	column position
+		dataType: int64
+		formatString: 0
+		lineageTag: 245235b7-75b3-4e21-be95-527e67bd9138
+		summarizeBy: none
+		sourceColumn: position
+
+		annotation SummarizationSetBy = User
+
+	column positionText
+		dataType: string
+		lineageTag: c03540ae-ce88-461b-823b-14b968767a75
+		summarizeBy: none
+		sourceColumn: positionText
+
+		annotation SummarizationSetBy = Automatic
+
+	column positionOrder
+		dataType: int64
+		formatString: 0
+		lineageTag: 1e67baf2-ce03-403d-b027-f8394a45d9ef
+		summarizeBy: sum
+		sourceColumn: positionOrder
+
+		annotation SummarizationSetBy = Automatic
+
+	column points
+		dataType: int64
+		formatString: 0
+		lineageTag: c8d0e1dd-9bd9-414a-a934-03df4413f915
+		summarizeBy: none
+		sourceColumn: points
+
+		annotation SummarizationSetBy = User
+
+	column laps
+		dataType: int64
+		formatString: 0
+		lineageTag: 36adde5c-386f-45b6-9b96-f1b4833518c2
+		summarizeBy: sum
+		sourceColumn: laps
+
+		annotation SummarizationSetBy = Automatic
+
+	column time
+		dataType: string
+		lineageTag: 7e73469f-c913-4bfa-b463-d444d14d606e
+		summarizeBy: none
+		sourceColumn: time
+
+		annotation SummarizationSetBy = Automatic
+
+	column milliseconds
+		dataType: string
+		lineageTag: c684f517-e322-401e-b946-81449fe49e32
+		summarizeBy: none
+		sourceColumn: milliseconds
+
+		annotation SummarizationSetBy = Automatic
+
+	column fastestLap
+		dataType: string
+		lineageTag: a1eccc03-a7a3-4ec9-8f56-907dd9a8f438
+		summarizeBy: none
+		sourceColumn: fastestLap
+
+		annotation SummarizationSetBy = Automatic
+
+	column rank
+		dataType: string
+		lineageTag: e08557b5-03f5-4b14-b8e2-3237d5b58352
+		summarizeBy: none
+		sourceColumn: rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column fastestLapTime
+		dataType: string
+		lineageTag: 8a313c88-f5d4-44a6-be72-df7e9cc4385f
+		summarizeBy: none
+		sourceColumn: fastestLapTime
+
+		annotation SummarizationSetBy = Automatic
+
+	column fastestLapSpeed
+		dataType: string
+		lineageTag: d6622377-f53e-45d8-92dd-9f9a35ae1056
+		summarizeBy: none
+		sourceColumn: fastestLapSpeed
+
+		annotation SummarizationSetBy = Automatic
+
+	column statusId
+		dataType: int64
+		formatString: 0
+		lineageTag: 48df00b7-a031-4ea7-b035-1ee070df0f4e
+		summarizeBy: none
+		sourceColumn: statusId
+
+		annotation SummarizationSetBy = Automatic
+
+	partition results = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\MySQL\f1\results.csv"),[Delimiter=",", Columns=18, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"resultId", Int64.Type}, {"raceId", Int64.Type}, {"driverId", Int64.Type}, {"constructorId", Int64.Type}, {"number", Int64.Type}, {"grid", Int64.Type}, {"position", type text}, {"positionText", type text}, {"positionOrder", Int64.Type}, {"points", Int64.Type}, {"laps", Int64.Type}, {"time", type text}, {"milliseconds", type text}, {"fastestLap", type text}, {"rank", type text}, {"fastestLapTime", type text}, {"fastestLapSpeed", type text}, {"statusId", Int64.Type}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Changed Type","/N","0",Replacer.ReplaceText,{"position"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","0","/N",Replacer.ReplaceText,{"position"}),
+				    #"Replaced Value2" = Table.ReplaceValue(#"Replaced Value1","0","\N",Replacer.ReplaceText,{"position"}),
+				    #"Replaced Value3" = Table.ReplaceValue(#"Replaced Value2","\N","0",Replacer.ReplaceText,{"position"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Replaced Value3",{{"position", type text}}),
+				    #"Replaced Value4" = Table.ReplaceValue(#"Changed Type1","1\N","0",Replacer.ReplaceText,{"position"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Replaced Value4", each true),
+				    #"Replaced Value5" = Table.ReplaceValue(#"Filtered Rows","0","1\N",Replacer.ReplaceText,{"position"}),
+				    #"Filtered Rows1" = Table.SelectRows(#"Replaced Value5", each true),
+				    #"Replaced Value6" = Table.ReplaceValue(#"Filtered Rows1","1/N","0",Replacer.ReplaceText,{"position"}),
+				    #"Replaced Value7" = Table.ReplaceValue(#"Replaced Value6","0","1\N",Replacer.ReplaceText,{"position"}),
+				    #"Replaced Value8" = Table.ReplaceValue(#"Replaced Value7","1\N","10",Replacer.ReplaceText,{"position"}),
+				    #"Replaced Value9" = Table.ReplaceValue(#"Replaced Value8","1/N","10",Replacer.ReplaceText,{"position"}),
+				    #"Replaced Value10" = Table.ReplaceValue(#"Replaced Value9","2/N","5",Replacer.ReplaceText,{"position"}),
+				    #"Replaced Value11" = Table.ReplaceValue(#"Replaced Value10","2\N","5",Replacer.ReplaceText,{"position"}),
+				    #"Filtered Rows2" = Table.SelectRows(#"Replaced Value11", each true),
+				    #"Replaced Value12" = Table.ReplaceValue(#"Filtered Rows2","3/N","0",Replacer.ReplaceText,{"position"}),
+				    #"Filtered Rows3" = Table.SelectRows(#"Replaced Value12", each true),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Filtered Rows3",{{"position", Int64.Type}})
+				in
+				    #"Changed Type2"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

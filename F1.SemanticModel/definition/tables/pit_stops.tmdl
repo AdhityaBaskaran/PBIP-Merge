@@ -1,0 +1,81 @@
+table pit_stops
+	lineageTag: 7f89af12-7246-4acb-ba99-d9272c6cb978
+
+	column raceId
+		dataType: int64
+		formatString: 0
+		lineageTag: bff2043c-afbc-41fd-9d6c-44476ef8e4f0
+		summarizeBy: none
+		sourceColumn: raceId
+
+		annotation SummarizationSetBy = Automatic
+
+	column driverId
+		dataType: int64
+		formatString: 0
+		lineageTag: 30f31ca9-b0a5-4bd6-8e9b-6e10a3a9d2b9
+		summarizeBy: none
+		sourceColumn: driverId
+
+		annotation SummarizationSetBy = Automatic
+
+	column stop
+		dataType: int64
+		formatString: 0
+		lineageTag: 2ed1afdb-ebda-4f6b-9001-7f42568a6416
+		summarizeBy: sum
+		sourceColumn: stop
+
+		annotation SummarizationSetBy = Automatic
+
+	column lap
+		dataType: int64
+		formatString: 0
+		lineageTag: 9cc97bac-9110-46ba-b98e-1713d297c428
+		summarizeBy: sum
+		sourceColumn: lap
+
+		annotation SummarizationSetBy = Automatic
+
+	column time
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 6c38b2e3-0748-4ea3-9c45-1501042fe7a9
+		summarizeBy: none
+		sourceColumn: time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column duration
+		dataType: double
+		lineageTag: f2e3455f-874d-4703-9969-ade77c51f441
+		summarizeBy: sum
+		sourceColumn: duration
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column milliseconds
+		dataType: int64
+		formatString: 0
+		lineageTag: 40116323-ccc6-458c-ac3f-38ce3b133e16
+		summarizeBy: sum
+		sourceColumn: milliseconds
+
+		annotation SummarizationSetBy = Automatic
+
+	partition pit_stops = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\MySQL\f1\pit_stops.csv"),[Delimiter=",", Columns=7, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"raceId", Int64.Type}, {"driverId", Int64.Type}, {"stop", Int64.Type}, {"lap", Int64.Type}, {"time", type time}, {"duration", type number}, {"milliseconds", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,109 @@
+table drivers
+	lineageTag: f2569d52-f26b-451a-ad98-f614efaf77d9
+
+	measure 'Win Rate' = DIVIDE([Wincount], [Racecount])
+		lineageTag: fb76a2c0-401e-4a46-9189-39e3349f81d9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column driverId
+		dataType: int64
+		formatString: 0
+		lineageTag: 393ef443-5954-468a-93ff-d44d0cb33290
+		summarizeBy: none
+		sourceColumn: driverId
+
+		annotation SummarizationSetBy = Automatic
+
+	column driverRef
+		dataType: string
+		lineageTag: 5a44ab65-d76a-4358-af59-690289ab459e
+		summarizeBy: none
+		sourceColumn: driverRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column number
+		dataType: string
+		lineageTag: eeb64dff-e827-4e6e-bcc0-531cdb788202
+		summarizeBy: none
+		sourceColumn: number
+
+		annotation SummarizationSetBy = Automatic
+
+	column code
+		dataType: string
+		lineageTag: 9119f0bc-f77a-4a4c-9163-5a1a1effdf68
+		summarizeBy: none
+		sourceColumn: code
+
+		annotation SummarizationSetBy = Automatic
+
+	column forename
+		dataType: string
+		lineageTag: 232b9dd4-1d97-4cf9-b83f-53cedacede9a
+		summarizeBy: none
+		sourceColumn: forename
+
+		annotation SummarizationSetBy = Automatic
+
+	column surname
+		dataType: string
+		lineageTag: dc332911-9b53-4b00-9d9f-13ccc72330dd
+		summarizeBy: none
+		sourceColumn: surname
+
+		annotation SummarizationSetBy = Automatic
+
+	column dob
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: b6e66a6f-02c7-4a7b-b652-7f99a87b91e2
+		summarizeBy: none
+		sourceColumn: dob
+
+		variation Variation
+			isDefault
+			relationship: acc48d36-3ff0-4aa4-8b14-6bbc8fa288e1
+			defaultHierarchy: LocalDateTable_1d678f62-6f7e-47f6-866c-d1c401cf1d85.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column nationality
+		dataType: string
+		lineageTag: 39591187-30c7-4428-b712-e093294ddd4e
+		summarizeBy: none
+		sourceColumn: nationality
+
+		annotation SummarizationSetBy = Automatic
+
+	column url
+		dataType: string
+		lineageTag: 30778fb6-fc16-4238-aa93-07c8fb22b139
+		summarizeBy: none
+		sourceColumn: url
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Full Name' = 'drivers'[forename]&" "&'drivers'[surname]
+		lineageTag: 6589eceb-9459-49ca-8d90-dd66ab160e54
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition drivers = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\MySQL\f1\drivers.csv"),[Delimiter=",", Columns=9, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"driverId", Int64.Type}, {"driverRef", type text}, {"number", type text}, {"code", type text}, {"forename", type text}, {"surname", type text}, {"dob", type date}, {"nationality", type text}, {"url", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

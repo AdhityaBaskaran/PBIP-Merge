@@ -1,0 +1,32 @@
+table status
+	lineageTag: 50522ad1-d07f-4f33-91f8-2db44202fc0c
+
+	column statusId
+		dataType: int64
+		formatString: 0
+		lineageTag: d0482cd7-7bcf-4791-a48e-9cd2bb38cc22
+		summarizeBy: none
+		sourceColumn: statusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: 860eb08e-4c02-4bf0-8d9f-2346cb500844
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition status = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\MySQL\f1\status.csv"),[Delimiter=",", Columns=2, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"statusId", Int64.Type}, {"status", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

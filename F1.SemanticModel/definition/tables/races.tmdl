@@ -1,0 +1,171 @@
+table races
+	lineageTag: 94e1bbd7-58ce-4ec8-9050-615fbfd18c97
+
+	column raceId
+		dataType: int64
+		formatString: 0
+		lineageTag: b7db75a0-db5e-4e70-85dd-e08f4343a40f
+		summarizeBy: none
+		sourceColumn: raceId
+
+		annotation SummarizationSetBy = Automatic
+
+	column year
+		dataType: int64
+		formatString: 0
+		lineageTag: ef5b8d78-200e-402b-a29a-d4af6eaa3b83
+		summarizeBy: none
+		sourceColumn: year
+
+		annotation SummarizationSetBy = User
+
+	column round
+		dataType: int64
+		formatString: 0
+		lineageTag: 1cce5b1d-02d1-4b18-a0c4-6e0ee5a021d6
+		summarizeBy: sum
+		sourceColumn: round
+
+		annotation SummarizationSetBy = Automatic
+
+	column circuitId
+		dataType: int64
+		formatString: 0
+		lineageTag: 207b693b-4470-4fa3-8410-7d5eb753faeb
+		summarizeBy: none
+		sourceColumn: circuitId
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: c2a41647-f0f1-4a18-bcb4-5f1c035b4ae2
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: b82e40f3-1123-4cf7-a40f-7b3e077a7095
+		summarizeBy: none
+		sourceColumn: date
+
+		variation Variation
+			isDefault
+			relationship: 67d2defb-b21f-4776-931a-5beec278ee9f
+			defaultHierarchy: LocalDateTable_c4fcf2d5-1298-4b9d-ae8d-6eb4ae1e4fb4.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column time
+		dataType: string
+		lineageTag: 11d0940d-bd08-4e1f-a8d8-18ad17c2fad0
+		summarizeBy: none
+		sourceColumn: time
+
+		annotation SummarizationSetBy = Automatic
+
+	column url
+		dataType: string
+		lineageTag: c58518f2-4e8b-4b1d-a1fb-8452a427effc
+		summarizeBy: none
+		sourceColumn: url
+
+		annotation SummarizationSetBy = Automatic
+
+	column fp1_date
+		dataType: string
+		lineageTag: 9bcbfdd5-a1d1-4ba1-abde-e8ce372d57b5
+		summarizeBy: none
+		sourceColumn: fp1_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column fp1_time
+		dataType: string
+		lineageTag: d08572f8-633d-4b36-8c09-0a86a316d6f6
+		summarizeBy: none
+		sourceColumn: fp1_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column fp2_date
+		dataType: string
+		lineageTag: b6c69f3c-6da2-4f6d-b2a5-055a0b3e0161
+		summarizeBy: none
+		sourceColumn: fp2_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column fp2_time
+		dataType: string
+		lineageTag: 3e3eb4c1-036b-40ea-a478-59149eb76aa5
+		summarizeBy: none
+		sourceColumn: fp2_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column fp3_date
+		dataType: string
+		lineageTag: fa52b126-db13-436d-aaf5-e0c57914ae8e
+		summarizeBy: none
+		sourceColumn: fp3_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column fp3_time
+		dataType: string
+		lineageTag: 93524354-de6c-4871-9fdd-e2df5093ef32
+		summarizeBy: none
+		sourceColumn: fp3_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column quali_date
+		dataType: string
+		lineageTag: 51c551bb-edbd-4dd3-8055-0201ceb5560c
+		summarizeBy: none
+		sourceColumn: quali_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column quali_time
+		dataType: string
+		lineageTag: 054e8e73-98a6-4495-9f8d-48beb93abad8
+		summarizeBy: none
+		sourceColumn: quali_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column sprint_date
+		dataType: string
+		lineageTag: a44200e0-efad-4793-b12b-5f9af7e8abe6
+		summarizeBy: none
+		sourceColumn: sprint_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column sprint_time
+		dataType: string
+		lineageTag: 90b4e97c-cf90-4c91-9387-3aed8212e307
+		summarizeBy: none
+		sourceColumn: sprint_time
+
+		annotation SummarizationSetBy = Automatic
+
+	partition races = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\MySQL\f1\races.csv"),[Delimiter=",", Columns=18, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"raceId", Int64.Type}, {"year", Int64.Type}, {"round", Int64.Type}, {"circuitId", Int64.Type}, {"name", type text}, {"date", type date}, {"time", type text}, {"url", type text}, {"fp1_date", type text}, {"fp1_time", type text}, {"fp2_date", type text}, {"fp2_time", type text}, {"fp3_date", type text}, {"fp3_time", type text}, {"quali_date", type text}, {"quali_time", type text}, {"sprint_date", type text}, {"sprint_time", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

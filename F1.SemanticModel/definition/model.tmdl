@@ -1,0 +1,53 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+/// Errors in queries that were loaded on 2/17/2026 3:29:06 PM.
+queryGroup 'Query Errors - 2/17/2026 3:29:06 PM'
+
+	annotation PBI_QueryGroupOrder = 0
+
+/// Errors in queries that were loaded on 2/17/2026 3:30:07 PM.
+queryGroup 'Query Errors - 2/17/2026 3:30:07 PM'
+
+	annotation PBI_QueryGroupOrder = 1
+
+/// Errors in queries that were loaded on 2/17/2026 7:42:51 PM.
+queryGroup 'Query Errors - 2/17/2026 7:42:51 PM'
+
+	annotation PBI_QueryGroupOrder = 2
+
+/// Errors in queries that were loaded on 2/17/2026 7:51:18 PM.
+queryGroup 'Query Errors - 2/17/2026 7:51:18 PM'
+
+	annotation PBI_QueryGroupOrder = 3
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["circuits","constructor_results","constructor_standings","constructors","driver_standings","drivers","lap_times","pit_stops","Errors in pit_stops","qualifying","races","results","Errors in results","sprint_results","status","Errors in results (2)","Errors in results (3)"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table circuits
+ref table constructor_results
+ref table constructor_standings
+ref table constructors
+ref table driver_standings
+ref table drivers
+ref table DateTableTemplate_22065313-1538-4058-867f-3ad2a49415e9
+ref table LocalDateTable_1d678f62-6f7e-47f6-866c-d1c401cf1d85
+ref table lap_times
+ref table pit_stops
+ref table qualifying
+ref table races
+ref table LocalDateTable_c4fcf2d5-1298-4b9d-ae8d-6eb4ae1e4fb4
+ref table results
+ref table sprint_results
+ref table status
+
+ref cultureInfo en-US
+
