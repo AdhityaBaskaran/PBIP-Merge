@@ -184,5 +184,37 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "ede9f6ad5a8c214b08b1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "results"
+              }
+            },
+            "Property": "position"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "2a8a06a935f670e64d73",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "results"
+              }
+            },
+            "Property": "points"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
