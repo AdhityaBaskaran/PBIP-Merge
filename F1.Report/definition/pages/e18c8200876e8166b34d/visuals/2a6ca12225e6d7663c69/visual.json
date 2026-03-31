@@ -27,7 +27,7 @@
                 }
               },
               "queryRef": "drivers.Full Name",
-              "nativeQueryRef": "Full Name1"
+              "nativeQueryRef": "Full Name"
             },
             {
               "field": {

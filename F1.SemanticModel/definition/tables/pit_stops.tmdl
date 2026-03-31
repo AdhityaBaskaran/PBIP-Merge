@@ -1,10 +1,10 @@
-table 'pit_stops (2)'
-	lineageTag: 1cfa5f96-813a-49ff-a9ea-48a8766e1d2e
+table pit_stops
+	lineageTag: a91fef20-4173-442d-b900-105c4eb29574
 
 	column raceId
 		dataType: int64
 		formatString: 0
-		lineageTag: e9189086-605f-4838-92f9-356f670d6282
+		lineageTag: b1936d9e-06fb-4584-92e1-c483543d0e0a
 		summarizeBy: none
 		sourceColumn: raceId
 
@@ -13,7 +13,7 @@ table 'pit_stops (2)'
 	column driverId
 		dataType: int64
 		formatString: 0
-		lineageTag: 35ae5958-18e0-4708-bc36-6cf6529355b9
+		lineageTag: 1da0d5a7-24d8-4568-a764-69a0a729d16d
 		summarizeBy: none
 		sourceColumn: driverId
 
@@ -22,7 +22,7 @@ table 'pit_stops (2)'
 	column stop
 		dataType: int64
 		formatString: 0
-		lineageTag: 8b9bb0d0-6311-41e4-bfa0-7969499c4b60
+		lineageTag: 572fab83-9b01-4804-a0ad-e7f1ec004282
 		summarizeBy: sum
 		sourceColumn: stop
 
@@ -31,7 +31,7 @@ table 'pit_stops (2)'
 	column lap
 		dataType: int64
 		formatString: 0
-		lineageTag: d00ae334-582c-4d8c-8e99-e062071660ed
+		lineageTag: 1f8121e9-12c7-4e08-a617-880553f328a1
 		summarizeBy: sum
 		sourceColumn: lap
 
@@ -40,7 +40,7 @@ table 'pit_stops (2)'
 	column time
 		dataType: dateTime
 		formatString: Long Time
-		lineageTag: 953b21ad-6bf9-40ff-890e-7db5f1b12fc3
+		lineageTag: d54ec6b4-49ed-454f-b652-e39df93b1fd4
 		summarizeBy: none
 		sourceColumn: time
 
@@ -50,7 +50,7 @@ table 'pit_stops (2)'
 
 	column duration
 		dataType: double
-		lineageTag: 27d96d40-a24a-4629-967d-67bc13f311b3
+		lineageTag: 19e552f0-46f2-4b14-9ae0-d4da79d9f40f
 		summarizeBy: sum
 		sourceColumn: duration
 
@@ -61,17 +61,17 @@ table 'pit_stops (2)'
 	column milliseconds
 		dataType: int64
 		formatString: 0
-		lineageTag: 8b16b351-9cf8-4c48-8409-08836df00817
+		lineageTag: c2e7022c-eef4-4758-9b06-3c8a3eca81d7
 		summarizeBy: sum
 		sourceColumn: milliseconds
 
 		annotation SummarizationSetBy = Automatic
 
-	partition 'pit_stops (2)' = m
+	partition pit_stops = m
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(File.Contents("C:\Users\10845381\OneDrive - LTIMindtree\f1\pit_stops.csv"),[Delimiter=",", Columns=7, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    Source = Csv.Document(Web.Contents("https://ltimindtree.sharepoint.com/sites/01LOrealAPACDelivery/Shared%20Documents/General/Trainings%20-%20BI%20Team/Trainee_Batch_3/Git%20RND/Dataset/pit_stops.csv"),[Delimiter=",", Columns=7, Encoding=1252, QuoteStyle=QuoteStyle.None]),
 				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"raceId", Int64.Type}, {"driverId", Int64.Type}, {"stop", Int64.Type}, {"lap", Int64.Type}, {"time", type time}, {"duration", type number}, {"milliseconds", Int64.Type}}),
 				    #"Removed Errors" = Table.RemoveRowsWithErrors(#"Changed Type", {"duration"})

@@ -1,10 +1,10 @@
 table lap_times
-	lineageTag: ecd1567e-b13c-4b06-8176-69c265faa332
+	lineageTag: 7798f8f7-2fb9-4b54-8af9-e49e6010ba5e
 
 	column raceId
 		dataType: int64
 		formatString: 0
-		lineageTag: 37efc853-3f51-4719-86b8-68af39eee528
+		lineageTag: dfbef4a4-6aa2-4410-9a66-7b0ae5265063
 		summarizeBy: none
 		sourceColumn: raceId
 
@@ -13,7 +13,7 @@ table lap_times
 	column driverId
 		dataType: int64
 		formatString: 0
-		lineageTag: ed7b4d8d-303e-42e4-a79b-c6c342f0ae25
+		lineageTag: 7479da3f-c6ea-487a-85cd-2c06d1ff8efd
 		summarizeBy: none
 		sourceColumn: driverId
 
@@ -22,7 +22,7 @@ table lap_times
 	column lap
 		dataType: int64
 		formatString: 0
-		lineageTag: fc749e64-b0b9-415e-a879-bf6a1af1c095
+		lineageTag: 2e51cfba-0798-4df1-8023-008bb7b92898
 		summarizeBy: sum
 		sourceColumn: lap
 
@@ -31,7 +31,7 @@ table lap_times
 	column position
 		dataType: int64
 		formatString: 0
-		lineageTag: d90aa5d9-1700-4fd5-93ff-af5034e9aaf7
+		lineageTag: 5e3cb640-229d-4221-97bc-c5bb590a914f
 		summarizeBy: sum
 		sourceColumn: position
 
@@ -39,7 +39,7 @@ table lap_times
 
 	column time
 		dataType: string
-		lineageTag: a1266b3d-bc23-4947-9c53-e83969586b2c
+		lineageTag: 1ab36968-cad6-439f-b529-4af9e9826634
 		summarizeBy: none
 		sourceColumn: time
 
@@ -48,7 +48,7 @@ table lap_times
 	column milliseconds
 		dataType: int64
 		formatString: 0
-		lineageTag: c97ebc21-08e1-413f-bd70-a37715ac8ad9
+		lineageTag: 4ea50857-5400-42a4-8879-7d0e447923e8
 		summarizeBy: sum
 		sourceColumn: milliseconds
 
@@ -58,7 +58,7 @@ table lap_times
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(File.Contents("C:\Users\10845381\OneDrive - LTIMindtree\f1\lap_times.csv"),[Delimiter=",", Columns=6, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    Source = Csv.Document(Web.Contents("https://ltimindtree.sharepoint.com/sites/01LOrealAPACDelivery/Shared%20Documents/General/Trainings%20-%20BI%20Team/Trainee_Batch_3/Git%20RND/Dataset/lap_times.csv"),[Delimiter=",", Columns=6, Encoding=1252, QuoteStyle=QuoteStyle.None]),
 				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"raceId", Int64.Type}, {"driverId", Int64.Type}, {"lap", Int64.Type}, {"position", Int64.Type}, {"time", type text}, {"milliseconds", Int64.Type}})
 				in

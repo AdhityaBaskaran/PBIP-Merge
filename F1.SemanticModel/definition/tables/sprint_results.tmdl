@@ -1,10 +1,10 @@
 table sprint_results
-	lineageTag: 132ad80d-c2f5-48fe-aae4-44ac4bb194d4
+	lineageTag: 637d722c-dd1a-4414-bdd4-f3db8b79b8db
 
 	column resultId
 		dataType: int64
 		formatString: 0
-		lineageTag: 70be3eac-dac5-4a6a-bce2-475666a11510
+		lineageTag: b3f601a0-5409-4c30-8006-970d0f0e7dd1
 		summarizeBy: count
 		sourceColumn: resultId
 
@@ -13,7 +13,7 @@ table sprint_results
 	column raceId
 		dataType: int64
 		formatString: 0
-		lineageTag: 73506186-be2a-4532-a023-a1c1056348c4
+		lineageTag: 3b60a05d-5bcf-462c-aa4e-157b2c5e25d6
 		summarizeBy: none
 		sourceColumn: raceId
 
@@ -22,7 +22,7 @@ table sprint_results
 	column driverId
 		dataType: int64
 		formatString: 0
-		lineageTag: c26a44c8-9417-4348-ab67-a3ae30160de3
+		lineageTag: 65679025-c2b2-4cf5-992c-ce6f428135d1
 		summarizeBy: none
 		sourceColumn: driverId
 
@@ -31,7 +31,7 @@ table sprint_results
 	column constructorId
 		dataType: int64
 		formatString: 0
-		lineageTag: af467a96-dafc-4389-92bc-dc0f65c1f526
+		lineageTag: df18f485-7f35-4bad-8dcd-69c87a86530b
 		summarizeBy: none
 		sourceColumn: constructorId
 
@@ -40,7 +40,7 @@ table sprint_results
 	column number
 		dataType: int64
 		formatString: 0
-		lineageTag: 8d0b68e5-9d92-4798-8221-652f889249ea
+		lineageTag: 65aa997d-0910-4f77-bb7d-7f3b93356584
 		summarizeBy: sum
 		sourceColumn: number
 
@@ -49,7 +49,7 @@ table sprint_results
 	column grid
 		dataType: int64
 		formatString: 0
-		lineageTag: a3452447-f8c5-44b2-9e54-b84d4febe6e7
+		lineageTag: 1c3ee41c-1779-4db6-a477-fe143cfb04b5
 		summarizeBy: sum
 		sourceColumn: grid
 
@@ -57,7 +57,7 @@ table sprint_results
 
 	column position
 		dataType: string
-		lineageTag: de15a777-f253-42fa-9652-f7cb98792229
+		lineageTag: 0efaebb6-4546-494a-8a62-51d66af3859e
 		summarizeBy: none
 		sourceColumn: position
 
@@ -65,7 +65,7 @@ table sprint_results
 
 	column positionText
 		dataType: string
-		lineageTag: 0e8dfef1-236b-45a9-ad1d-1d5bdfd89840
+		lineageTag: 31d251eb-621f-482e-a6aa-a6ffd639af6b
 		summarizeBy: none
 		sourceColumn: positionText
 
@@ -74,7 +74,7 @@ table sprint_results
 	column positionOrder
 		dataType: int64
 		formatString: 0
-		lineageTag: 5ab476b6-b330-42f5-b863-43251188f0b1
+		lineageTag: ec20ea35-27fd-46aa-b4fa-128725d38af0
 		summarizeBy: sum
 		sourceColumn: positionOrder
 
@@ -83,7 +83,7 @@ table sprint_results
 	column points
 		dataType: int64
 		formatString: 0
-		lineageTag: 90b7714b-d6d6-49b8-a58e-b5ffd3709949
+		lineageTag: 7580bb95-2abc-4ab7-a3d8-86ad96ec8242
 		summarizeBy: sum
 		sourceColumn: points
 
@@ -92,7 +92,7 @@ table sprint_results
 	column laps
 		dataType: int64
 		formatString: 0
-		lineageTag: 4db9927b-2685-442e-bc01-f5f0f5871813
+		lineageTag: 6501e402-eccf-4c39-96f6-62365ef8fdd5
 		summarizeBy: sum
 		sourceColumn: laps
 
@@ -100,7 +100,7 @@ table sprint_results
 
 	column time
 		dataType: string
-		lineageTag: a738d253-2e5f-4bdd-8b61-697b53dcccb0
+		lineageTag: 2cf3c7e1-9480-46ac-a4c2-4c768eae1726
 		summarizeBy: none
 		sourceColumn: time
 
@@ -108,7 +108,7 @@ table sprint_results
 
 	column milliseconds
 		dataType: string
-		lineageTag: b6c8a493-4f9e-464d-ba26-2b1bf2ba1456
+		lineageTag: 2f93785f-aef9-418a-b885-c9440cc09ebd
 		summarizeBy: none
 		sourceColumn: milliseconds
 
@@ -116,7 +116,7 @@ table sprint_results
 
 	column fastestLap
 		dataType: string
-		lineageTag: 6d68755a-de58-4510-b668-39bbc9ca27d6
+		lineageTag: e99e1342-dc5c-4885-bb66-f9884deb23df
 		summarizeBy: none
 		sourceColumn: fastestLap
 
@@ -124,7 +124,7 @@ table sprint_results
 
 	column fastestLapTime
 		dataType: string
-		lineageTag: 2cc0598e-ba96-46fe-838d-40176a0d3cbe
+		lineageTag: 33a96640-9d86-441c-b1c0-7712207eae59
 		summarizeBy: none
 		sourceColumn: fastestLapTime
 
@@ -133,7 +133,7 @@ table sprint_results
 	column statusId
 		dataType: int64
 		formatString: 0
-		lineageTag: fbcfefbe-ea1c-4ef2-bc43-4146e76b6c63
+		lineageTag: 45211cbf-0e66-4deb-96c2-eaa234a27ddf
 		summarizeBy: none
 		sourceColumn: statusId
 
@@ -143,7 +143,7 @@ table sprint_results
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(File.Contents("C:\Users\10845381\OneDrive - LTIMindtree\f1\sprint_results.csv"),[Delimiter=",", Columns=16, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    Source = Csv.Document(Web.Contents("https://ltimindtree.sharepoint.com/sites/01LOrealAPACDelivery/Shared%20Documents/General/Trainings%20-%20BI%20Team/Trainee_Batch_3/Git%20RND/Dataset/sprint_results.csv"),[Delimiter=",", Columns=16, Encoding=1252, QuoteStyle=QuoteStyle.None]),
 				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"resultId", Int64.Type}, {"raceId", Int64.Type}, {"driverId", Int64.Type}, {"constructorId", Int64.Type}, {"number", Int64.Type}, {"grid", Int64.Type}, {"position", type text}, {"positionText", type text}, {"positionOrder", Int64.Type}, {"points", Int64.Type}, {"laps", Int64.Type}, {"time", type text}, {"milliseconds", type text}, {"fastestLap", type text}, {"fastestLapTime", type text}, {"statusId", Int64.Type}})
 				in

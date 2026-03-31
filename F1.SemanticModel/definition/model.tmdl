@@ -8,7 +8,7 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["pit_stops","results","Metrics","circuits","constructor_results","constructor_standings","constructors","driver_standings","drivers","lap_times","pit_stops (2)","qualifying","races","results (2)","seasons","sprint_results","status"]
+annotation PBI_QueryOrder = ["Metrics","circuits","constructor_results","constructor_standings","constructors","driver_standings","drivers","lap_times","pit_stops","qualifying","races","results","seasons","sprint_results","status"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
@@ -19,14 +19,14 @@ ref table constructor_standings
 ref table constructors
 ref table driver_standings
 ref table drivers
-ref table DateTableTemplate_2179a3b8-11fb-4da5-89ba-e9d17a800fc5
-ref table LocalDateTable_ea81a2aa-bfe9-4c47-ace3-b263dab1f443
+ref table DateTableTemplate_ad652747-3c4a-4fee-b3b7-2eac6fec5563
+ref table LocalDateTable_9d684f46-6408-4f97-8732-2b4a1d9314f7
 ref table lap_times
-ref table 'pit_stops (2)'
+ref table pit_stops
 ref table qualifying
 ref table races
-ref table LocalDateTable_8376344a-4277-4e88-b04a-39f1c345678e
-ref table 'results (2)'
+ref table LocalDateTable_abb21bec-2ec8-415a-a709-f48127e2e091
+ref table results
 ref table seasons
 ref table sprint_results
 ref table status

@@ -1,10 +1,10 @@
 table circuits
-	lineageTag: 332a1383-026d-477a-8a8e-29ed796f02dd
+	lineageTag: 19f8b178-bf23-4314-9c83-8684bbe6a831
 
 	column circuitId
 		dataType: int64
 		formatString: 0
-		lineageTag: 0cde9cf2-ffa1-4445-a51f-8d5c77100eb2
+		lineageTag: 580be271-1404-4e82-801d-d4db807552b1
 		summarizeBy: none
 		sourceColumn: circuitId
 
@@ -12,7 +12,7 @@ table circuits
 
 	column circuitRef
 		dataType: string
-		lineageTag: aca91e46-bff1-449b-90e2-0b61b048f974
+		lineageTag: 6b1def00-5052-4a30-8faa-bc2e5d53cf52
 		summarizeBy: none
 		sourceColumn: circuitRef
 
@@ -20,7 +20,7 @@ table circuits
 
 	column name
 		dataType: string
-		lineageTag: 507a60ba-9f92-4e45-8249-25efe479e877
+		lineageTag: 3a7fa3bb-65c8-4fcd-92a9-b8a8ea0244cd
 		summarizeBy: none
 		sourceColumn: name
 
@@ -28,7 +28,7 @@ table circuits
 
 	column location
 		dataType: string
-		lineageTag: bb6a3aa7-7463-4ca2-be88-a2df3a51ba38
+		lineageTag: b92b0623-81aa-40e8-a813-8e802fd18bc0
 		summarizeBy: none
 		sourceColumn: location
 
@@ -36,7 +36,7 @@ table circuits
 
 	column country
 		dataType: string
-		lineageTag: 4aa3cc4d-1f14-44f6-bb1c-b0355e8482f5
+		lineageTag: b70e2d8c-37f2-4860-9545-ba27cb3a6a11
 		summarizeBy: none
 		sourceColumn: country
 
@@ -44,7 +44,7 @@ table circuits
 
 	column lat
 		dataType: double
-		lineageTag: 16cd0fb1-c6eb-46e5-a920-0e4d7cc908e1
+		lineageTag: 673b0d4d-a3fc-4b4a-9029-4ca83e987b18
 		summarizeBy: none
 		sourceColumn: lat
 
@@ -54,7 +54,7 @@ table circuits
 
 	column lng
 		dataType: double
-		lineageTag: 3c39f8fd-7471-497f-b89d-fa05a6874e6e
+		lineageTag: 0d831096-43c3-4856-a0dc-3fd58923592d
 		summarizeBy: none
 		sourceColumn: lng
 
@@ -65,7 +65,7 @@ table circuits
 	column alt
 		dataType: int64
 		formatString: 0
-		lineageTag: 531b3271-9512-4fe0-8c2f-5f4b336c91cc
+		lineageTag: 4404dee4-5d5a-49f0-a968-d4cec0887059
 		summarizeBy: none
 		sourceColumn: alt
 
@@ -73,7 +73,7 @@ table circuits
 
 	column url
 		dataType: string
-		lineageTag: a1864050-3ee4-4adb-b616-f830143977ce
+		lineageTag: b2d9edc6-0e1b-4a2d-9812-34ff1e4bd0c5
 		summarizeBy: none
 		sourceColumn: url
 
@@ -83,7 +83,7 @@ table circuits
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(File.Contents("C:\Users\10845381\OneDrive - LTIMindtree\f1\circuits.csv"),[Delimiter=",", Columns=9, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    Source = Csv.Document(Web.Contents("https://ltimindtree.sharepoint.com/sites/01LOrealAPACDelivery/Shared%20Documents/General/Trainings%20-%20BI%20Team/Trainee_Batch_3/Git%20RND/Dataset/circuits.csv"),[Delimiter=",", Columns=9, Encoding=65001, QuoteStyle=QuoteStyle.None]),
 				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"circuitId", Int64.Type}, {"circuitRef", type text}, {"name", type text}, {"location", type text}, {"country", type text}, {"lat", type number}, {"lng", type number}, {"alt", Int64.Type}, {"url", type text}})
 				in

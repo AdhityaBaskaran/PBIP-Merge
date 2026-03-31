@@ -1,10 +1,10 @@
 table driver_standings
-	lineageTag: d925ba47-86d4-4443-813f-0fe12f46c585
+	lineageTag: bc58b2ec-0d30-4d2a-a406-8ea1fdf0f55f
 
 	column driverStandingsId
 		dataType: int64
 		formatString: 0
-		lineageTag: 11dbe87c-e4ca-48bd-88de-d703f2bea8e6
+		lineageTag: 6da0091e-088a-4d89-bca6-8244d008020a
 		summarizeBy: count
 		sourceColumn: driverStandingsId
 
@@ -13,7 +13,7 @@ table driver_standings
 	column raceId
 		dataType: int64
 		formatString: 0
-		lineageTag: 35ef7914-efb5-45f9-b8ef-03dbdf1dd156
+		lineageTag: b2480bf9-090f-4343-abb9-391037886460
 		summarizeBy: none
 		sourceColumn: raceId
 
@@ -22,7 +22,7 @@ table driver_standings
 	column driverId
 		dataType: int64
 		formatString: 0
-		lineageTag: 23eab956-a7ff-497c-8889-221140d382f9
+		lineageTag: aa86cd5a-8a31-43f7-a6a2-b64ba19bb69d
 		summarizeBy: none
 		sourceColumn: driverId
 
@@ -31,7 +31,7 @@ table driver_standings
 	column points
 		dataType: int64
 		formatString: 0
-		lineageTag: 28e7380f-cd53-4069-866e-36fdf0912d44
+		lineageTag: 45eab7a6-a7a5-4419-bc9b-1c79b3272162
 		summarizeBy: sum
 		sourceColumn: points
 
@@ -40,7 +40,7 @@ table driver_standings
 	column position
 		dataType: int64
 		formatString: 0
-		lineageTag: ee8fda23-aaa8-41aa-aa8f-a3ff8ebfc9f0
+		lineageTag: 8c814d42-b0ae-455c-a299-d7da1ae22ccb
 		summarizeBy: sum
 		sourceColumn: position
 
@@ -49,7 +49,7 @@ table driver_standings
 	column positionText
 		dataType: int64
 		formatString: 0
-		lineageTag: f56453a3-e735-43c5-aa4b-eb0199e429fb
+		lineageTag: 14cbb7b8-0883-4eba-9317-48b016095297
 		summarizeBy: sum
 		sourceColumn: positionText
 
@@ -58,7 +58,7 @@ table driver_standings
 	column wins
 		dataType: int64
 		formatString: 0
-		lineageTag: 8b56116c-7ddb-4ab8-aae2-84e4d6e654a4
+		lineageTag: 039573e2-c722-4556-9b7b-77cd74532afc
 		summarizeBy: sum
 		sourceColumn: wins
 
@@ -68,7 +68,7 @@ table driver_standings
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(File.Contents("C:\Users\10845381\OneDrive - LTIMindtree\f1\driver_standings.csv"),[Delimiter=",", Columns=7, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    Source = Csv.Document(Web.Contents("https://ltimindtree.sharepoint.com/sites/01LOrealAPACDelivery/Shared%20Documents/General/Trainings%20-%20BI%20Team/Trainee_Batch_3/Git%20RND/Dataset/driver_standings.csv"),[Delimiter=",", Columns=7, Encoding=1252, QuoteStyle=QuoteStyle.None]),
 				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"driverStandingsId", Int64.Type}, {"raceId", Int64.Type}, {"driverId", Int64.Type}, {"points", Int64.Type}, {"position", Int64.Type}, {"positionText", Int64.Type}, {"wins", Int64.Type}})
 				in

@@ -1,10 +1,10 @@
 table constructor_standings
-	lineageTag: 2c188631-e392-49b3-96d1-2daa36139ce9
+	lineageTag: 9867c4f0-55cf-418e-8a59-861b9df73c31
 
 	column constructorStandingsId
 		dataType: int64
 		formatString: 0
-		lineageTag: 3d47c767-5e07-4f3a-8bb6-372ce453161d
+		lineageTag: edc31d41-e7a8-418f-9e13-a70dc771ec33
 		summarizeBy: count
 		sourceColumn: constructorStandingsId
 
@@ -13,7 +13,7 @@ table constructor_standings
 	column raceId
 		dataType: int64
 		formatString: 0
-		lineageTag: 83764f81-8d4b-442a-87c7-eb37a081fd72
+		lineageTag: de7ed83c-2f0f-4032-8b93-cba4ccd68da5
 		summarizeBy: none
 		sourceColumn: raceId
 
@@ -22,7 +22,7 @@ table constructor_standings
 	column constructorId
 		dataType: int64
 		formatString: 0
-		lineageTag: 13f0dcff-8a58-4e25-baf7-4d8597ad8910
+		lineageTag: d2eeef4b-54e9-454b-8af5-666ed46a2863
 		summarizeBy: none
 		sourceColumn: constructorId
 
@@ -31,7 +31,7 @@ table constructor_standings
 	column points
 		dataType: int64
 		formatString: 0
-		lineageTag: fbbb66f8-c097-4b85-9baa-59c8a18b1783
+		lineageTag: 4fb5e719-5da8-44b9-9bc5-7058c1376a9e
 		summarizeBy: sum
 		sourceColumn: points
 
@@ -40,25 +40,16 @@ table constructor_standings
 	column position
 		dataType: int64
 		formatString: 0
-		lineageTag: e28915d7-b167-4ad5-800a-4ce1c6215b29
+		lineageTag: bb98641c-75be-4864-9ba4-3384ccfae298
 		summarizeBy: sum
 		sourceColumn: position
-
-		annotation SummarizationSetBy = Automatic
-
-	column positionText
-		dataType: int64
-		formatString: 0
-		lineageTag: 7d568150-a890-4c34-8ba0-971bfedb127e
-		summarizeBy: sum
-		sourceColumn: positionText
 
 		annotation SummarizationSetBy = Automatic
 
 	column wins
 		dataType: int64
 		formatString: 0
-		lineageTag: 449f71ee-be43-45c5-b5ee-51c4383cf798
+		lineageTag: fe1670dc-c039-4a64-996c-1d2355596116
 		summarizeBy: sum
 		sourceColumn: wins
 
@@ -68,12 +59,12 @@ table constructor_standings
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(File.Contents("C:\Users\10845381\OneDrive - LTIMindtree\f1\constructor_standings.csv"),[Delimiter=",", Columns=7, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    Source = Csv.Document(Web.Contents("https://ltimindtree.sharepoint.com/sites/01LOrealAPACDelivery/Shared%20Documents/General/Trainings%20-%20BI%20Team/Trainee_Batch_3/Git%20RND/Dataset/constructor_standings.csv"),[Delimiter=",", Columns=7, Encoding=1252, QuoteStyle=QuoteStyle.None]),
 				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"constructorStandingsId", Int64.Type}, {"raceId", Int64.Type}, {"constructorId", Int64.Type}, {"points", Int64.Type}, {"position", Int64.Type}, {"positionText", Int64.Type}, {"wins", Int64.Type}}),
-				    #"Removed Errors" = Table.RemoveRowsWithErrors(#"Changed Type", {"positionText"})
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"positionText"})
 				in
-				    #"Removed Errors"
+				    #"Removed Columns"
 
 	annotation PBI_ResultType = Table
 

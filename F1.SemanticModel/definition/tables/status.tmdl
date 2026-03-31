@@ -1,10 +1,10 @@
 table status
-	lineageTag: 406d6862-d7b8-4769-b59d-0ce4685ea3dc
+	lineageTag: 40789869-60e5-4c6d-9d93-10f74da62acc
 
 	column statusId
 		dataType: int64
 		formatString: 0
-		lineageTag: f2c3c680-f772-48f4-974f-7d3dfd72a8ec
+		lineageTag: 50862cb8-2cf8-44a7-8e72-5499f14f6c3e
 		summarizeBy: none
 		sourceColumn: statusId
 
@@ -12,7 +12,7 @@ table status
 
 	column status
 		dataType: string
-		lineageTag: e95d8108-2206-40d3-8fff-074af4ae3148
+		lineageTag: a0bfd1fc-de83-4f6f-a6f7-12426e19e3cd
 		summarizeBy: none
 		sourceColumn: status
 
@@ -22,7 +22,7 @@ table status
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(File.Contents("C:\Users\10845381\OneDrive - LTIMindtree\f1\status.csv"),[Delimiter=",", Columns=2, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    Source = Csv.Document(Web.Contents("https://ltimindtree.sharepoint.com/sites/01LOrealAPACDelivery/Shared%20Documents/General/Trainings%20-%20BI%20Team/Trainee_Batch_3/Git%20RND/Dataset/status.csv"),[Delimiter=",", Columns=2, Encoding=1252, QuoteStyle=QuoteStyle.None]),
 				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"statusId", Int64.Type}, {"status", type text}})
 				in
