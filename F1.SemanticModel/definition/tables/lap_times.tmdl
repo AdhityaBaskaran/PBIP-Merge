@@ -1,10 +1,10 @@
 table lap_times
-	lineageTag: 23ee8c69-630c-40e0-8fa4-85071e0affe9
+	lineageTag: ecd1567e-b13c-4b06-8176-69c265faa332
 
 	column raceId
 		dataType: int64
 		formatString: 0
-		lineageTag: 18edc2e8-041c-4fdc-9cd4-1d0ef1a08c74
+		lineageTag: 37efc853-3f51-4719-86b8-68af39eee528
 		summarizeBy: none
 		sourceColumn: raceId
 
@@ -13,7 +13,7 @@ table lap_times
 	column driverId
 		dataType: int64
 		formatString: 0
-		lineageTag: d0cabc8a-3e41-4442-9c7c-c70486427a50
+		lineageTag: ed7b4d8d-303e-42e4-a79b-c6c342f0ae25
 		summarizeBy: none
 		sourceColumn: driverId
 
@@ -22,7 +22,7 @@ table lap_times
 	column lap
 		dataType: int64
 		formatString: 0
-		lineageTag: 7e45df9b-f97c-4d31-bc85-46cecffef9e1
+		lineageTag: fc749e64-b0b9-415e-a879-bf6a1af1c095
 		summarizeBy: sum
 		sourceColumn: lap
 
@@ -31,7 +31,7 @@ table lap_times
 	column position
 		dataType: int64
 		formatString: 0
-		lineageTag: 7c5f9a5c-e82e-4cb9-b404-c840db8a10c7
+		lineageTag: d90aa5d9-1700-4fd5-93ff-af5034e9aaf7
 		summarizeBy: sum
 		sourceColumn: position
 
@@ -39,7 +39,7 @@ table lap_times
 
 	column time
 		dataType: string
-		lineageTag: 557f9a9d-4fc1-41ac-ba8c-7159ea3f6111
+		lineageTag: a1266b3d-bc23-4947-9c53-e83969586b2c
 		summarizeBy: none
 		sourceColumn: time
 
@@ -48,7 +48,7 @@ table lap_times
 	column milliseconds
 		dataType: int64
 		formatString: 0
-		lineageTag: 540dc166-b543-44ee-8a78-7429055a0d40
+		lineageTag: c97ebc21-08e1-413f-bd70-a37715ac8ad9
 		summarizeBy: sum
 		sourceColumn: milliseconds
 
@@ -58,7 +58,7 @@ table lap_times
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(File.Contents("C:\MySQL\f1\lap_times.csv"),[Delimiter=",", Columns=6, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    Source = Csv.Document(File.Contents("C:\Users\10845381\OneDrive - LTIMindtree\f1\lap_times.csv"),[Delimiter=",", Columns=6, Encoding=1252, QuoteStyle=QuoteStyle.None]),
 				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"raceId", Int64.Type}, {"driverId", Int64.Type}, {"lap", Int64.Type}, {"position", Int64.Type}, {"time", type text}, {"milliseconds", Int64.Type}})
 				in

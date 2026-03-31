@@ -6,46 +6,28 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-/// Errors in queries that were loaded on 2/17/2026 3:29:06 PM.
-queryGroup 'Query Errors - 2/17/2026 3:29:06 PM'
-
-	annotation PBI_QueryGroupOrder = 0
-
-/// Errors in queries that were loaded on 2/17/2026 3:30:07 PM.
-queryGroup 'Query Errors - 2/17/2026 3:30:07 PM'
-
-	annotation PBI_QueryGroupOrder = 1
-
-/// Errors in queries that were loaded on 2/17/2026 7:42:51 PM.
-queryGroup 'Query Errors - 2/17/2026 7:42:51 PM'
-
-	annotation PBI_QueryGroupOrder = 2
-
-/// Errors in queries that were loaded on 2/17/2026 7:51:18 PM.
-queryGroup 'Query Errors - 2/17/2026 7:51:18 PM'
-
-	annotation PBI_QueryGroupOrder = 3
-
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["circuits","constructor_results","constructor_standings","constructors","driver_standings","drivers","lap_times","pit_stops","Errors in pit_stops","qualifying","races","results","Errors in results","sprint_results","status","Errors in results (2)","Errors in results (3)"]
+annotation PBI_QueryOrder = ["pit_stops","results","Metrics","circuits","constructor_results","constructor_standings","constructors","driver_standings","drivers","lap_times","pit_stops (2)","qualifying","races","results (2)","seasons","sprint_results","status"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
+ref table Metrics
 ref table circuits
 ref table constructor_results
 ref table constructor_standings
 ref table constructors
 ref table driver_standings
 ref table drivers
-ref table DateTableTemplate_22065313-1538-4058-867f-3ad2a49415e9
-ref table LocalDateTable_1d678f62-6f7e-47f6-866c-d1c401cf1d85
+ref table DateTableTemplate_2179a3b8-11fb-4da5-89ba-e9d17a800fc5
+ref table LocalDateTable_ea81a2aa-bfe9-4c47-ace3-b263dab1f443
 ref table lap_times
-ref table pit_stops
+ref table 'pit_stops (2)'
 ref table qualifying
 ref table races
-ref table LocalDateTable_c4fcf2d5-1298-4b9d-ae8d-6eb4ae1e4fb4
-ref table results
+ref table LocalDateTable_8376344a-4277-4e88-b04a-39f1c345678e
+ref table 'results (2)'
+ref table seasons
 ref table sprint_results
 ref table status
 

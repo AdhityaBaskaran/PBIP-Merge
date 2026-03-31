@@ -1,15 +1,10 @@
 table drivers
-	lineageTag: f2569d52-f26b-451a-ad98-f614efaf77d9
-
-	measure 'Win Rate' = DIVIDE([Wincount], [Racecount])
-		lineageTag: fb76a2c0-401e-4a46-9189-39e3349f81d9
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+	lineageTag: 2e23f43e-b021-4646-b80a-fc18437b8291
 
 	column driverId
 		dataType: int64
 		formatString: 0
-		lineageTag: 393ef443-5954-468a-93ff-d44d0cb33290
+		lineageTag: 7722b08f-997f-4220-b557-bf36719603cb
 		summarizeBy: none
 		sourceColumn: driverId
 
@@ -17,7 +12,7 @@ table drivers
 
 	column driverRef
 		dataType: string
-		lineageTag: 5a44ab65-d76a-4358-af59-690289ab459e
+		lineageTag: f2c15d66-2fc4-4bd7-bd92-96e31d034b0c
 		summarizeBy: none
 		sourceColumn: driverRef
 
@@ -25,7 +20,7 @@ table drivers
 
 	column number
 		dataType: string
-		lineageTag: eeb64dff-e827-4e6e-bcc0-531cdb788202
+		lineageTag: 59ce95e7-37df-4d84-b7ef-2f348957ce36
 		summarizeBy: none
 		sourceColumn: number
 
@@ -33,7 +28,7 @@ table drivers
 
 	column code
 		dataType: string
-		lineageTag: 9119f0bc-f77a-4a4c-9163-5a1a1effdf68
+		lineageTag: 645a7f3c-0166-4521-a961-3ce19a12ecfc
 		summarizeBy: none
 		sourceColumn: code
 
@@ -41,7 +36,7 @@ table drivers
 
 	column forename
 		dataType: string
-		lineageTag: 232b9dd4-1d97-4cf9-b83f-53cedacede9a
+		lineageTag: 2a8f7cac-e38b-49c6-83f2-4519b7b4a9a5
 		summarizeBy: none
 		sourceColumn: forename
 
@@ -49,7 +44,7 @@ table drivers
 
 	column surname
 		dataType: string
-		lineageTag: dc332911-9b53-4b00-9d9f-13ccc72330dd
+		lineageTag: 36342d03-fa44-4d66-9664-80ec1edc6c3c
 		summarizeBy: none
 		sourceColumn: surname
 
@@ -58,14 +53,14 @@ table drivers
 	column dob
 		dataType: dateTime
 		formatString: Long Date
-		lineageTag: b6e66a6f-02c7-4a7b-b652-7f99a87b91e2
+		lineageTag: a6d05d30-81b9-4086-9d90-c71ae1d18a91
 		summarizeBy: none
 		sourceColumn: dob
 
 		variation Variation
 			isDefault
-			relationship: acc48d36-3ff0-4aa4-8b14-6bbc8fa288e1
-			defaultHierarchy: LocalDateTable_1d678f62-6f7e-47f6-866c-d1c401cf1d85.'Date Hierarchy'
+			relationship: 8c03bc69-a31d-4ade-8402-a2899d6a29e8
+			defaultHierarchy: LocalDateTable_ea81a2aa-bfe9-4c47-ace3-b263dab1f443.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
@@ -73,7 +68,7 @@ table drivers
 
 	column nationality
 		dataType: string
-		lineageTag: 39591187-30c7-4428-b712-e093294ddd4e
+		lineageTag: 2360e8a2-318a-4685-8980-a8f4e2060d4e
 		summarizeBy: none
 		sourceColumn: nationality
 
@@ -81,14 +76,14 @@ table drivers
 
 	column url
 		dataType: string
-		lineageTag: 30778fb6-fc16-4238-aa93-07c8fb22b139
+		lineageTag: df2a85e4-0ad6-4e00-a02f-968ae861d51a
 		summarizeBy: none
 		sourceColumn: url
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Full Name' = 'drivers'[forename]&" "&'drivers'[surname]
-		lineageTag: 6589eceb-9459-49ca-8d90-dd66ab160e54
+	column 'Full Name' = 'drivers'[forename] & " " & drivers[surname]
+		lineageTag: d15ca48a-468c-4b9e-819b-c123eca68dba
 		summarizeBy: none
 
 		annotation SummarizationSetBy = Automatic
@@ -97,13 +92,11 @@ table drivers
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(File.Contents("C:\MySQL\f1\drivers.csv"),[Delimiter=",", Columns=9, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    Source = Csv.Document(File.Contents("C:\Users\10845381\OneDrive - LTIMindtree\f1\drivers.csv"),[Delimiter=",", Columns=9, Encoding=65001, QuoteStyle=QuoteStyle.None]),
 				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"driverId", Int64.Type}, {"driverRef", type text}, {"number", type text}, {"code", type text}, {"forename", type text}, {"surname", type text}, {"dob", type date}, {"nationality", type text}, {"url", type text}})
 				in
 				    #"Changed Type"
-
-	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
 

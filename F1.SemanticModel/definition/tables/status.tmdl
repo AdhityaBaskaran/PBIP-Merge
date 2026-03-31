@@ -1,10 +1,10 @@
 table status
-	lineageTag: 50522ad1-d07f-4f33-91f8-2db44202fc0c
+	lineageTag: 406d6862-d7b8-4769-b59d-0ce4685ea3dc
 
 	column statusId
 		dataType: int64
 		formatString: 0
-		lineageTag: d0482cd7-7bcf-4791-a48e-9cd2bb38cc22
+		lineageTag: f2c3c680-f772-48f4-974f-7d3dfd72a8ec
 		summarizeBy: none
 		sourceColumn: statusId
 
@@ -12,7 +12,7 @@ table status
 
 	column status
 		dataType: string
-		lineageTag: 860eb08e-4c02-4bf0-8d9f-2346cb500844
+		lineageTag: e95d8108-2206-40d3-8fff-074af4ae3148
 		summarizeBy: none
 		sourceColumn: status
 
@@ -22,7 +22,7 @@ table status
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(File.Contents("C:\MySQL\f1\status.csv"),[Delimiter=",", Columns=2, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    Source = Csv.Document(File.Contents("C:\Users\10845381\OneDrive - LTIMindtree\f1\status.csv"),[Delimiter=",", Columns=2, Encoding=1252, QuoteStyle=QuoteStyle.None]),
 				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"statusId", Int64.Type}, {"status", type text}})
 				in

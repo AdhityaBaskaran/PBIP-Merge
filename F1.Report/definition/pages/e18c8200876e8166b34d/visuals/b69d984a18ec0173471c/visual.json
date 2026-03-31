@@ -10,7 +10,7 @@
     "tabOrder": 2000
   },
   "visual": {
-    "visualType": "pieChart",
+    "visualType": "donutChart",
     "query": {
       "queryState": {
         "Category": {
@@ -323,8 +323,8 @@
                         "Type": 0
                       },
                       {
-                        "Name": "d1",
-                        "Entity": "driver_standings",
+                        "Name": "m",
+                        "Entity": "Metrics",
                         "Type": 0
                       }
                     ],
@@ -348,7 +348,7 @@
                           "Measure": {
                             "Expression": {
                               "SourceRef": {
-                                "Source": "d1"
+                                "Source": "m"
                               }
                             },
                             "Property": "Wincount"

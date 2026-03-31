@@ -1,10 +1,10 @@
 table races
-	lineageTag: 94e1bbd7-58ce-4ec8-9050-615fbfd18c97
+	lineageTag: b89bce72-e6f1-468b-8476-26a5f81f8b0c
 
 	column raceId
 		dataType: int64
 		formatString: 0
-		lineageTag: b7db75a0-db5e-4e70-85dd-e08f4343a40f
+		lineageTag: 233bc24f-2b3a-42e5-aaf7-395feea7dd95
 		summarizeBy: none
 		sourceColumn: raceId
 
@@ -13,16 +13,16 @@ table races
 	column year
 		dataType: int64
 		formatString: 0
-		lineageTag: ef5b8d78-200e-402b-a29a-d4af6eaa3b83
-		summarizeBy: none
+		lineageTag: a89536e0-2762-4a2d-be4f-7afa6c037d5d
+		summarizeBy: sum
 		sourceColumn: year
 
-		annotation SummarizationSetBy = User
+		annotation SummarizationSetBy = Automatic
 
 	column round
 		dataType: int64
 		formatString: 0
-		lineageTag: 1cce5b1d-02d1-4b18-a0c4-6e0ee5a021d6
+		lineageTag: 666dbfb0-1d97-49d1-970f-07232e84bd90
 		summarizeBy: sum
 		sourceColumn: round
 
@@ -31,7 +31,7 @@ table races
 	column circuitId
 		dataType: int64
 		formatString: 0
-		lineageTag: 207b693b-4470-4fa3-8410-7d5eb753faeb
+		lineageTag: 2e53bfe9-ebc4-4ee1-af6e-33e63503a500
 		summarizeBy: none
 		sourceColumn: circuitId
 
@@ -39,7 +39,7 @@ table races
 
 	column name
 		dataType: string
-		lineageTag: c2a41647-f0f1-4a18-bcb4-5f1c035b4ae2
+		lineageTag: ea4b3eb5-493c-49be-b26e-d58e08bbe291
 		summarizeBy: none
 		sourceColumn: name
 
@@ -48,14 +48,14 @@ table races
 	column date
 		dataType: dateTime
 		formatString: Long Date
-		lineageTag: b82e40f3-1123-4cf7-a40f-7b3e077a7095
+		lineageTag: ff9f4f15-80fa-49e1-8d89-b6c7fdca5870
 		summarizeBy: none
 		sourceColumn: date
 
 		variation Variation
 			isDefault
-			relationship: 67d2defb-b21f-4776-931a-5beec278ee9f
-			defaultHierarchy: LocalDateTable_c4fcf2d5-1298-4b9d-ae8d-6eb4ae1e4fb4.'Date Hierarchy'
+			relationship: d4033a6b-5512-4347-8279-9738d6859586
+			defaultHierarchy: LocalDateTable_8376344a-4277-4e88-b04a-39f1c345678e.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
@@ -63,7 +63,7 @@ table races
 
 	column time
 		dataType: string
-		lineageTag: 11d0940d-bd08-4e1f-a8d8-18ad17c2fad0
+		lineageTag: cbe70b6b-b361-44f3-81a2-af0a2908d23c
 		summarizeBy: none
 		sourceColumn: time
 
@@ -71,7 +71,7 @@ table races
 
 	column url
 		dataType: string
-		lineageTag: c58518f2-4e8b-4b1d-a1fb-8452a427effc
+		lineageTag: c2814088-a480-4eee-9727-1b2e2795320a
 		summarizeBy: none
 		sourceColumn: url
 
@@ -79,7 +79,7 @@ table races
 
 	column fp1_date
 		dataType: string
-		lineageTag: 9bcbfdd5-a1d1-4ba1-abde-e8ce372d57b5
+		lineageTag: 53ed352a-debf-4638-b11b-9122171737f1
 		summarizeBy: none
 		sourceColumn: fp1_date
 
@@ -87,7 +87,7 @@ table races
 
 	column fp1_time
 		dataType: string
-		lineageTag: d08572f8-633d-4b36-8c09-0a86a316d6f6
+		lineageTag: c573d004-4ac5-4dd6-8339-771f55fb4779
 		summarizeBy: none
 		sourceColumn: fp1_time
 
@@ -95,7 +95,7 @@ table races
 
 	column fp2_date
 		dataType: string
-		lineageTag: b6c69f3c-6da2-4f6d-b2a5-055a0b3e0161
+		lineageTag: d1c548fc-da4b-48e6-b7b0-ed5a965f6f03
 		summarizeBy: none
 		sourceColumn: fp2_date
 
@@ -103,7 +103,7 @@ table races
 
 	column fp2_time
 		dataType: string
-		lineageTag: 3e3eb4c1-036b-40ea-a478-59149eb76aa5
+		lineageTag: 0d7fab2e-c13d-4033-9849-8b5c900da56b
 		summarizeBy: none
 		sourceColumn: fp2_time
 
@@ -111,7 +111,7 @@ table races
 
 	column fp3_date
 		dataType: string
-		lineageTag: fa52b126-db13-436d-aaf5-e0c57914ae8e
+		lineageTag: 43f6dc5c-7f20-4e58-967e-2f67d371330b
 		summarizeBy: none
 		sourceColumn: fp3_date
 
@@ -119,7 +119,7 @@ table races
 
 	column fp3_time
 		dataType: string
-		lineageTag: 93524354-de6c-4871-9fdd-e2df5093ef32
+		lineageTag: b9010806-b27e-48e5-bc3d-d657018af1d6
 		summarizeBy: none
 		sourceColumn: fp3_time
 
@@ -127,7 +127,7 @@ table races
 
 	column quali_date
 		dataType: string
-		lineageTag: 51c551bb-edbd-4dd3-8055-0201ceb5560c
+		lineageTag: 033f4f69-be90-433d-9a63-a0e68c3316c8
 		summarizeBy: none
 		sourceColumn: quali_date
 
@@ -135,7 +135,7 @@ table races
 
 	column quali_time
 		dataType: string
-		lineageTag: 054e8e73-98a6-4495-9f8d-48beb93abad8
+		lineageTag: e85e9049-4274-47dd-951a-35f0f04de4e1
 		summarizeBy: none
 		sourceColumn: quali_time
 
@@ -143,7 +143,7 @@ table races
 
 	column sprint_date
 		dataType: string
-		lineageTag: a44200e0-efad-4793-b12b-5f9af7e8abe6
+		lineageTag: ebc09d6e-df0a-4a6e-b816-f2931df6d588
 		summarizeBy: none
 		sourceColumn: sprint_date
 
@@ -151,7 +151,7 @@ table races
 
 	column sprint_time
 		dataType: string
-		lineageTag: 90b4e97c-cf90-4c91-9387-3aed8212e307
+		lineageTag: 267f2a26-7b6a-41d7-917a-8bc5de7cba62
 		summarizeBy: none
 		sourceColumn: sprint_time
 
@@ -161,7 +161,7 @@ table races
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(File.Contents("C:\MySQL\f1\races.csv"),[Delimiter=",", Columns=18, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    Source = Csv.Document(File.Contents("C:\Users\10845381\OneDrive - LTIMindtree\f1\races.csv"),[Delimiter=",", Columns=18, Encoding=1252, QuoteStyle=QuoteStyle.None]),
 				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"raceId", Int64.Type}, {"year", Int64.Type}, {"round", Int64.Type}, {"circuitId", Int64.Type}, {"name", type text}, {"date", type date}, {"time", type text}, {"url", type text}, {"fp1_date", type text}, {"fp1_time", type text}, {"fp2_date", type text}, {"fp2_time", type text}, {"fp3_date", type text}, {"fp3_time", type text}, {"quali_date", type text}, {"quali_time", type text}, {"sprint_date", type text}, {"sprint_time", type text}})
 				in

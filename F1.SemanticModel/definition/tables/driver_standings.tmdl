@@ -1,18 +1,10 @@
 table driver_standings
-	lineageTag: af81b514-516b-4ada-af76-fd47e2e207b7
-
-	measure Wincount = COUNT(driver_standings[wins])
-		formatString: 0
-		lineageTag: 6e292253-6078-445e-b8a0-da8703fd7343
-
-	measure Racecount = COUNT(driver_standings[raceId])
-		formatString: 0
-		lineageTag: 88aeb60e-21ef-4c41-9114-3344dc8645e1
+	lineageTag: d925ba47-86d4-4443-813f-0fe12f46c585
 
 	column driverStandingsId
 		dataType: int64
 		formatString: 0
-		lineageTag: 3d38fe99-e3fe-47b2-b0dd-9a23ba5d918e
+		lineageTag: 11dbe87c-e4ca-48bd-88de-d703f2bea8e6
 		summarizeBy: count
 		sourceColumn: driverStandingsId
 
@@ -21,7 +13,7 @@ table driver_standings
 	column raceId
 		dataType: int64
 		formatString: 0
-		lineageTag: 65e64701-21f2-4f1f-b65c-c34917dcfa10
+		lineageTag: 35ef7914-efb5-45f9-b8ef-03dbdf1dd156
 		summarizeBy: none
 		sourceColumn: raceId
 
@@ -30,7 +22,7 @@ table driver_standings
 	column driverId
 		dataType: int64
 		formatString: 0
-		lineageTag: 5eedb5f0-4292-4d91-bcb7-9594d8f56e3e
+		lineageTag: 23eab956-a7ff-497c-8889-221140d382f9
 		summarizeBy: none
 		sourceColumn: driverId
 
@@ -39,25 +31,26 @@ table driver_standings
 	column points
 		dataType: int64
 		formatString: 0
-		lineageTag: 6d8c8ef3-f685-4a7d-bac3-ca72067e18bc
-		summarizeBy: none
+		lineageTag: 28e7380f-cd53-4069-866e-36fdf0912d44
+		summarizeBy: sum
 		sourceColumn: points
 
-		annotation SummarizationSetBy = User
+		annotation SummarizationSetBy = Automatic
 
 	column position
 		dataType: int64
 		formatString: 0
-		lineageTag: 02c1d108-4346-4c48-8dd3-cc694e4d8bd6
-		summarizeBy: none
+		lineageTag: ee8fda23-aaa8-41aa-aa8f-a3ff8ebfc9f0
+		summarizeBy: sum
 		sourceColumn: position
 
-		annotation SummarizationSetBy = User
+		annotation SummarizationSetBy = Automatic
 
 	column positionText
-		dataType: string
-		lineageTag: 7b3abf23-fa61-4011-bdb4-0bcea16a6788
-		summarizeBy: none
+		dataType: int64
+		formatString: 0
+		lineageTag: f56453a3-e735-43c5-aa4b-eb0199e429fb
+		summarizeBy: sum
 		sourceColumn: positionText
 
 		annotation SummarizationSetBy = Automatic
@@ -65,23 +58,21 @@ table driver_standings
 	column wins
 		dataType: int64
 		formatString: 0
-		lineageTag: 1eefc72c-af2f-4b19-8d92-e498ff21e6e8
-		summarizeBy: none
+		lineageTag: 8b56116c-7ddb-4ab8-aae2-84e4d6e654a4
+		summarizeBy: sum
 		sourceColumn: wins
 
-		annotation SummarizationSetBy = User
+		annotation SummarizationSetBy = Automatic
 
 	partition driver_standings = m
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(File.Contents("C:\MySQL\f1\driver_standings.csv"),[Delimiter=",", Columns=7, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    Source = Csv.Document(File.Contents("C:\Users\10845381\OneDrive - LTIMindtree\f1\driver_standings.csv"),[Delimiter=",", Columns=7, Encoding=1252, QuoteStyle=QuoteStyle.None]),
 				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"driverStandingsId", Int64.Type}, {"raceId", Int64.Type}, {"driverId", Int64.Type}, {"points", Int64.Type}, {"position", Int64.Type}, {"positionText", type text}, {"wins", Int64.Type}})
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"driverStandingsId", Int64.Type}, {"raceId", Int64.Type}, {"driverId", Int64.Type}, {"points", Int64.Type}, {"position", Int64.Type}, {"positionText", Int64.Type}, {"wins", Int64.Type}})
 				in
 				    #"Changed Type"
-
-	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
 

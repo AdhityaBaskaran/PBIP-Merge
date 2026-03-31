@@ -1,0 +1,32 @@
+table seasons
+	lineageTag: 2f45dc0e-f57a-4fe0-8b4d-559569f021d1
+
+	column year
+		dataType: int64
+		formatString: 0
+		lineageTag: 2008bb9d-2d94-40b8-a9d2-985bf4158cb1
+		summarizeBy: sum
+		sourceColumn: year
+
+		annotation SummarizationSetBy = Automatic
+
+	column url
+		dataType: string
+		lineageTag: 0f6e1002-5193-4bfc-bc9c-9c990477f323
+		summarizeBy: none
+		sourceColumn: url
+
+		annotation SummarizationSetBy = Automatic
+
+	partition seasons = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\10845381\OneDrive - LTIMindtree\f1\seasons.csv"),[Delimiter=",", Columns=2, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"year", Int64.Type}, {"url", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
