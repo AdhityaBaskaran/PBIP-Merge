@@ -1,10 +1,10 @@
 table results
-	lineageTag: ad88cc72-d54f-43ed-8af3-33810e0888e8
+	lineageTag: 11d6739a-a776-40b0-9b5b-e2cb903cba02
 
 	column resultId
 		dataType: int64
 		formatString: 0
-		lineageTag: 84532bcf-858e-4050-9875-ad1623009136
+		lineageTag: 9e816102-a42c-42c6-aa0a-953f9d35b74e
 		summarizeBy: count
 		sourceColumn: resultId
 
@@ -13,7 +13,7 @@ table results
 	column raceId
 		dataType: int64
 		formatString: 0
-		lineageTag: 511c5840-2e69-4eca-b903-fbbbe446c2ed
+		lineageTag: 29b4f667-ba82-4d06-863a-e573dd202f6a
 		summarizeBy: none
 		sourceColumn: raceId
 
@@ -22,7 +22,7 @@ table results
 	column driverId
 		dataType: int64
 		formatString: 0
-		lineageTag: 5850c8fd-8299-4bc5-b456-e1aa61861fd6
+		lineageTag: a6e84994-a759-4257-929f-181f393dccef
 		summarizeBy: none
 		sourceColumn: driverId
 
@@ -31,7 +31,7 @@ table results
 	column constructorId
 		dataType: int64
 		formatString: 0
-		lineageTag: cb04a813-5d62-47a6-8551-461308d91e08
+		lineageTag: fdfc01aa-0a1f-446e-98af-8efaa0bbead3
 		summarizeBy: none
 		sourceColumn: constructorId
 
@@ -40,7 +40,7 @@ table results
 	column number
 		dataType: int64
 		formatString: 0
-		lineageTag: d879c13f-696b-4f28-b802-f7532b3e4998
+		lineageTag: dfddefd2-7726-4d4f-84ab-8f4d93a83368
 		summarizeBy: sum
 		sourceColumn: number
 
@@ -49,7 +49,7 @@ table results
 	column grid
 		dataType: int64
 		formatString: 0
-		lineageTag: 33dc5d1d-a4da-4d27-9701-23668e2df93c
+		lineageTag: 3b9603db-1e00-44c9-9903-bb9c72023a4a
 		summarizeBy: sum
 		sourceColumn: grid
 
@@ -58,7 +58,7 @@ table results
 	column position
 		dataType: int64
 		formatString: 0
-		lineageTag: 245235b7-75b3-4e21-be95-527e67bd9138
+		lineageTag: a7ddcd9a-aa57-4b91-9450-7c4e9e5f496e
 		summarizeBy: none
 		sourceColumn: position
 
@@ -66,7 +66,7 @@ table results
 
 	column positionText
 		dataType: string
-		lineageTag: c03540ae-ce88-461b-823b-14b968767a75
+		lineageTag: 08f75035-997a-4f01-9405-717878d44f39
 		summarizeBy: none
 		sourceColumn: positionText
 
@@ -75,7 +75,7 @@ table results
 	column positionOrder
 		dataType: int64
 		formatString: 0
-		lineageTag: 1e67baf2-ce03-403d-b027-f8394a45d9ef
+		lineageTag: 505ce7ff-4a0a-442c-99d5-81a653d0504e
 		summarizeBy: sum
 		sourceColumn: positionOrder
 
@@ -84,7 +84,7 @@ table results
 	column points
 		dataType: int64
 		formatString: 0
-		lineageTag: c8d0e1dd-9bd9-414a-a934-03df4413f915
+		lineageTag: 38b82c1e-800a-4825-80bc-ff89f627a0d0
 		summarizeBy: none
 		sourceColumn: points
 
@@ -93,7 +93,7 @@ table results
 	column laps
 		dataType: int64
 		formatString: 0
-		lineageTag: 36adde5c-386f-45b6-9b96-f1b4833518c2
+		lineageTag: 1e0a908b-c305-4770-b5d2-25ee33226b21
 		summarizeBy: sum
 		sourceColumn: laps
 
@@ -101,7 +101,7 @@ table results
 
 	column time
 		dataType: string
-		lineageTag: 7e73469f-c913-4bfa-b463-d444d14d606e
+		lineageTag: 4c05a8aa-5460-4386-b058-2904032f4836
 		summarizeBy: none
 		sourceColumn: time
 
@@ -109,7 +109,7 @@ table results
 
 	column milliseconds
 		dataType: string
-		lineageTag: c684f517-e322-401e-b946-81449fe49e32
+		lineageTag: 8091a0d3-6de1-4f4e-a44f-5c5d2ea00066
 		summarizeBy: none
 		sourceColumn: milliseconds
 
@@ -117,7 +117,7 @@ table results
 
 	column fastestLap
 		dataType: string
-		lineageTag: a1eccc03-a7a3-4ec9-8f56-907dd9a8f438
+		lineageTag: 9fad21ba-5372-4ddc-bc6c-9b45fb442bae
 		summarizeBy: none
 		sourceColumn: fastestLap
 
@@ -125,7 +125,7 @@ table results
 
 	column rank
 		dataType: string
-		lineageTag: e08557b5-03f5-4b14-b8e2-3237d5b58352
+		lineageTag: 543587a1-1037-4e15-96b2-f3f41d56e64e
 		summarizeBy: none
 		sourceColumn: rank
 
@@ -133,7 +133,7 @@ table results
 
 	column fastestLapTime
 		dataType: string
-		lineageTag: 8a313c88-f5d4-44a6-be72-df7e9cc4385f
+		lineageTag: 2f5eadca-9a08-4a4a-8e1b-640655835280
 		summarizeBy: none
 		sourceColumn: fastestLapTime
 
@@ -141,7 +141,7 @@ table results
 
 	column fastestLapSpeed
 		dataType: string
-		lineageTag: d6622377-f53e-45d8-92dd-9f9a35ae1056
+		lineageTag: 4f35fda8-8f40-4459-b3ac-1c2759ef7b7a
 		summarizeBy: none
 		sourceColumn: fastestLapSpeed
 
@@ -150,7 +150,7 @@ table results
 	column statusId
 		dataType: int64
 		formatString: 0
-		lineageTag: 48df00b7-a031-4ea7-b035-1ee070df0f4e
+		lineageTag: 1ba332a7-27db-4988-b101-9003e76bb749
 		summarizeBy: none
 		sourceColumn: statusId
 
@@ -160,30 +160,13 @@ table results
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(File.Contents("C:\MySQL\f1\results.csv"),[Delimiter=",", Columns=18, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    Source = Csv.Document(Web.Contents("https://ltimindtree.sharepoint.com/sites/01LOrealAPACDelivery/Shared%20Documents/General/Trainings%20-%20BI%20Team/Trainee_Batch_3/Git%20RND/Dataset/results.csv"),[Delimiter=",", Columns=18, Encoding=1252, QuoteStyle=QuoteStyle.None]),
 				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"resultId", Int64.Type}, {"raceId", Int64.Type}, {"driverId", Int64.Type}, {"constructorId", Int64.Type}, {"number", Int64.Type}, {"grid", Int64.Type}, {"position", type text}, {"positionText", type text}, {"positionOrder", Int64.Type}, {"points", Int64.Type}, {"laps", Int64.Type}, {"time", type text}, {"milliseconds", type text}, {"fastestLap", type text}, {"rank", type text}, {"fastestLapTime", type text}, {"fastestLapSpeed", type text}, {"statusId", Int64.Type}}),
-				    #"Replaced Value" = Table.ReplaceValue(#"Changed Type","/N","0",Replacer.ReplaceText,{"position"}),
-				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","0","/N",Replacer.ReplaceText,{"position"}),
-				    #"Replaced Value2" = Table.ReplaceValue(#"Replaced Value1","0","\N",Replacer.ReplaceText,{"position"}),
-				    #"Replaced Value3" = Table.ReplaceValue(#"Replaced Value2","\N","0",Replacer.ReplaceText,{"position"}),
-				    #"Changed Type1" = Table.TransformColumnTypes(#"Replaced Value3",{{"position", type text}}),
-				    #"Replaced Value4" = Table.ReplaceValue(#"Changed Type1","1\N","0",Replacer.ReplaceText,{"position"}),
-				    #"Filtered Rows" = Table.SelectRows(#"Replaced Value4", each true),
-				    #"Replaced Value5" = Table.ReplaceValue(#"Filtered Rows","0","1\N",Replacer.ReplaceText,{"position"}),
-				    #"Filtered Rows1" = Table.SelectRows(#"Replaced Value5", each true),
-				    #"Replaced Value6" = Table.ReplaceValue(#"Filtered Rows1","1/N","0",Replacer.ReplaceText,{"position"}),
-				    #"Replaced Value7" = Table.ReplaceValue(#"Replaced Value6","0","1\N",Replacer.ReplaceText,{"position"}),
-				    #"Replaced Value8" = Table.ReplaceValue(#"Replaced Value7","1\N","10",Replacer.ReplaceText,{"position"}),
-				    #"Replaced Value9" = Table.ReplaceValue(#"Replaced Value8","1/N","10",Replacer.ReplaceText,{"position"}),
-				    #"Replaced Value10" = Table.ReplaceValue(#"Replaced Value9","2/N","5",Replacer.ReplaceText,{"position"}),
-				    #"Replaced Value11" = Table.ReplaceValue(#"Replaced Value10","2\N","5",Replacer.ReplaceText,{"position"}),
-				    #"Filtered Rows2" = Table.SelectRows(#"Replaced Value11", each true),
-				    #"Replaced Value12" = Table.ReplaceValue(#"Filtered Rows2","3/N","0",Replacer.ReplaceText,{"position"}),
-				    #"Filtered Rows3" = Table.SelectRows(#"Replaced Value12", each true),
-				    #"Changed Type2" = Table.TransformColumnTypes(#"Filtered Rows3",{{"position", Int64.Type}})
+				    #"Filtered Rows" = Table.SelectRows(#"Changed Type", each ([position] <> "\N")),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Filtered Rows",{{"position", Int64.Type}})
 				in
-				    #"Changed Type2"
+				    #"Changed Type1"
 
 	annotation PBI_ResultType = Table
 

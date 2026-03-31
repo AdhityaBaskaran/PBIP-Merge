@@ -1,10 +1,10 @@
 table constructors
-	lineageTag: d9a519bd-7460-46ae-b440-8f798915f9d1
+	lineageTag: ab1b74ce-13d1-4031-b52b-cd05aebd339e
 
 	column constructorId
 		dataType: int64
 		formatString: 0
-		lineageTag: 03d667f1-704a-40f7-b51a-2c52579813ce
+		lineageTag: 165a958e-f999-42cd-8971-f4250ae732da
 		summarizeBy: none
 		sourceColumn: constructorId
 
@@ -12,7 +12,7 @@ table constructors
 
 	column constructorRef
 		dataType: string
-		lineageTag: f636a480-5dac-4cdf-890d-40a4bdcabbf7
+		lineageTag: b7179baa-cb14-43c4-af17-cfa48425ac4d
 		summarizeBy: none
 		sourceColumn: constructorRef
 
@@ -20,7 +20,7 @@ table constructors
 
 	column name
 		dataType: string
-		lineageTag: 306dec15-30b4-4838-933c-63f1560fc885
+		lineageTag: 4801f381-2e17-4b44-b092-1643a032d248
 		summarizeBy: none
 		sourceColumn: name
 
@@ -28,7 +28,7 @@ table constructors
 
 	column nationality
 		dataType: string
-		lineageTag: 1cde6307-3dda-4f7b-a2a3-c7f31dedebc5
+		lineageTag: 23716995-245a-495a-bbd9-2535d46e8761
 		summarizeBy: none
 		sourceColumn: nationality
 
@@ -36,7 +36,7 @@ table constructors
 
 	column url
 		dataType: string
-		lineageTag: d87a5a77-aa4b-48db-b60d-71dcfc3239dc
+		lineageTag: 6f2a2253-791d-416a-b24d-555b17288962
 		summarizeBy: none
 		sourceColumn: url
 
@@ -46,13 +46,11 @@ table constructors
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(File.Contents("C:\MySQL\f1\constructors.csv"),[Delimiter=",", Columns=5, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    Source = Csv.Document(Web.Contents("https://ltimindtree.sharepoint.com/sites/01LOrealAPACDelivery/Shared%20Documents/General/Trainings%20-%20BI%20Team/Trainee_Batch_3/Git%20RND/Dataset/constructors.csv"),[Delimiter=",", Columns=5, Encoding=1252, QuoteStyle=QuoteStyle.None]),
 				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"constructorId", Int64.Type}, {"constructorRef", type text}, {"name", type text}, {"nationality", type text}, {"url", type text}})
 				in
 				    #"Changed Type"
-
-	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
 

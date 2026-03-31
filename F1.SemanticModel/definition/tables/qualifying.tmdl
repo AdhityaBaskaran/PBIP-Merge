@@ -1,10 +1,10 @@
 table qualifying
-	lineageTag: 73d2df69-4a4a-4bca-85f4-7ebea67b9204
+	lineageTag: d5073d9b-6d31-410d-9e85-aa39da36e891
 
 	column qualifyId
 		dataType: int64
 		formatString: 0
-		lineageTag: db275d4f-184c-4cea-bb00-aea449f329ea
+		lineageTag: c845c8b3-178b-497b-8188-afcf2c2256fd
 		summarizeBy: count
 		sourceColumn: qualifyId
 
@@ -13,7 +13,7 @@ table qualifying
 	column raceId
 		dataType: int64
 		formatString: 0
-		lineageTag: aa035258-0e81-482c-9c91-345167e80e2c
+		lineageTag: 5acf1120-0476-4596-be86-3ac93a2503e7
 		summarizeBy: none
 		sourceColumn: raceId
 
@@ -22,7 +22,7 @@ table qualifying
 	column driverId
 		dataType: int64
 		formatString: 0
-		lineageTag: 1c882f18-45ce-409b-a99d-0692153d2d57
+		lineageTag: c7afe059-e74c-4eb0-bf22-f06e587918d5
 		summarizeBy: none
 		sourceColumn: driverId
 
@@ -31,7 +31,7 @@ table qualifying
 	column constructorId
 		dataType: int64
 		formatString: 0
-		lineageTag: b38d6a6f-a5dc-4c66-aa9e-4a3c4d1b5047
+		lineageTag: 2c6b4c66-aa5f-4b06-98eb-81669a8f4796
 		summarizeBy: none
 		sourceColumn: constructorId
 
@@ -40,7 +40,7 @@ table qualifying
 	column number
 		dataType: int64
 		formatString: 0
-		lineageTag: e5db2685-6db6-4242-8831-97e2474ae86d
+		lineageTag: 003f8d4b-49aa-4d85-84c1-f40345ff022a
 		summarizeBy: sum
 		sourceColumn: number
 
@@ -49,7 +49,7 @@ table qualifying
 	column position
 		dataType: int64
 		formatString: 0
-		lineageTag: 9b0d7f00-6759-46eb-812f-0703a3e65c5f
+		lineageTag: ef8ef4f7-fda8-4df8-874e-d8c7918f5971
 		summarizeBy: sum
 		sourceColumn: position
 
@@ -57,7 +57,7 @@ table qualifying
 
 	column q1
 		dataType: string
-		lineageTag: 0c8d6e7a-87d9-4d98-8894-0cfa5f956585
+		lineageTag: ce550e0a-f790-492c-accc-ba7c428aff2f
 		summarizeBy: none
 		sourceColumn: q1
 
@@ -65,7 +65,7 @@ table qualifying
 
 	column q2
 		dataType: string
-		lineageTag: 1c4fd05b-bf84-4fad-a13f-64b496f4ac34
+		lineageTag: 245ebd3b-b228-4b28-b5be-471b38b5ce08
 		summarizeBy: none
 		sourceColumn: q2
 
@@ -73,7 +73,7 @@ table qualifying
 
 	column q3
 		dataType: string
-		lineageTag: 4c1ace21-eee9-4f64-acbf-437749e8a1c7
+		lineageTag: 91130361-56dd-4d54-8bdf-012faa73a52c
 		summarizeBy: none
 		sourceColumn: q3
 
@@ -83,7 +83,7 @@ table qualifying
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(File.Contents("C:\MySQL\f1\qualifying.csv"),[Delimiter=",", Columns=9, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    Source = Csv.Document(Web.Contents("https://ltimindtree.sharepoint.com/sites/01LOrealAPACDelivery/Shared%20Documents/General/Trainings%20-%20BI%20Team/Trainee_Batch_3/Git%20RND/Dataset/qualifying.csv"),[Delimiter=",", Columns=9, Encoding=1252, QuoteStyle=QuoteStyle.None]),
 				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"qualifyId", Int64.Type}, {"raceId", Int64.Type}, {"driverId", Int64.Type}, {"constructorId", Int64.Type}, {"number", Int64.Type}, {"position", Int64.Type}, {"q1", type text}, {"q2", type text}, {"q3", type text}})
 				in

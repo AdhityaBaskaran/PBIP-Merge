@@ -1,13 +1,13 @@
-table DateTableTemplate_22065313-1538-4058-867f-3ad2a49415e9
+table DateTableTemplate_ad652747-3c4a-4fee-b3b7-2eac6fec5563
 	isHidden
 	isPrivate
-	lineageTag: 31a6848d-f62c-42a7-b172-a015a290c44e
+	lineageTag: 51ce810f-edc4-460e-b75b-1bee8f0623d3
 
 	column Date
 		dataType: dateTime
 		isHidden
 		formatString: General Date
-		lineageTag: b775821b-a07f-4ada-a16a-7877834a69b8
+		lineageTag: 7db09720-364d-4c3f-b11e-64b17476de26
 		dataCategory: PaddedDateTableDates
 		summarizeBy: none
 		isNameInferred
@@ -19,7 +19,7 @@ table DateTableTemplate_22065313-1538-4058-867f-3ad2a49415e9
 		dataType: int64
 		isHidden
 		formatString: 0
-		lineageTag: a81e4f4d-742c-4c26-96a2-5ea87fe6eef1
+		lineageTag: 60533496-fd27-4427-a0cb-9875506381bc
 		dataCategory: Years
 		summarizeBy: none
 
@@ -31,7 +31,7 @@ table DateTableTemplate_22065313-1538-4058-867f-3ad2a49415e9
 		dataType: int64
 		isHidden
 		formatString: 0
-		lineageTag: e6c1fa01-d00c-4c3d-961a-9ac723daae26
+		lineageTag: c79007c9-9e12-427e-b4c5-1e24395fe759
 		dataCategory: MonthOfYear
 		summarizeBy: none
 
@@ -42,7 +42,7 @@ table DateTableTemplate_22065313-1538-4058-867f-3ad2a49415e9
 	column Month = FORMAT([Date], "MMMM")
 		dataType: string
 		isHidden
-		lineageTag: 64c52163-b8c8-4c4a-b851-29401e854bd9
+		lineageTag: 58d46afe-7a43-4759-baea-3501a6b18b66
 		dataCategory: Months
 		summarizeBy: none
 		sortByColumn: MonthNo
@@ -55,7 +55,7 @@ table DateTableTemplate_22065313-1538-4058-867f-3ad2a49415e9
 		dataType: int64
 		isHidden
 		formatString: 0
-		lineageTag: fccc8f55-1223-4e7e-9c37-a58a74591e7b
+		lineageTag: c73f9cf8-84b5-4454-a8fd-b44b895ce372
 		dataCategory: QuarterOfYear
 		summarizeBy: none
 
@@ -66,7 +66,7 @@ table DateTableTemplate_22065313-1538-4058-867f-3ad2a49415e9
 	column Quarter = "Qtr " & [QuarterNo]
 		dataType: string
 		isHidden
-		lineageTag: e9d38090-73ac-4fcc-8757-e0374f547deb
+		lineageTag: 2f62f8f7-dd16-4ffb-bb5d-86563c480ac8
 		dataCategory: Quarters
 		summarizeBy: none
 		sortByColumn: QuarterNo
@@ -79,7 +79,7 @@ table DateTableTemplate_22065313-1538-4058-867f-3ad2a49415e9
 		dataType: int64
 		isHidden
 		formatString: 0
-		lineageTag: 9567fd6a-931c-4d93-a45f-cb38971faf79
+		lineageTag: 70e00f80-a5e6-4d9c-92d5-a8650141bc1b
 		dataCategory: DayOfMonth
 		summarizeBy: none
 
@@ -88,27 +88,27 @@ table DateTableTemplate_22065313-1538-4058-867f-3ad2a49415e9
 		annotation TemplateId = Day
 
 	hierarchy 'Date Hierarchy'
-		lineageTag: fb0048af-34d1-4a04-816d-057e3d77b831
+		lineageTag: c694538b-47e8-4a71-be1f-1fd5028b9a53
 
 		level Year
-			lineageTag: ba68be33-4923-4a83-91c9-6d7a1d740256
+			lineageTag: 60537175-a6f9-4e0e-b5e3-58bcb9c4f5d8
 			column: Year
 
 		level Quarter
-			lineageTag: 133c70a1-0fd1-419b-bec1-0c2e1d6cf240
+			lineageTag: fa00af89-cce3-4880-9d2e-6cb379960acd
 			column: Quarter
 
 		level Month
-			lineageTag: 5d31b795-5b74-412a-ae44-0a56288da83c
+			lineageTag: ce14ca94-b5b0-4b4a-957f-2c899c7afae2
 			column: Month
 
 		level Day
-			lineageTag: 0ce4b857-ac57-43e6-9cb3-f36a6fd02977
+			lineageTag: 2f6d4216-2adc-446d-bcdb-c4ffbe9bbeec
 			column: Day
 
 		annotation TemplateId = DateHierarchy
 
-	partition DateTableTemplate_22065313-1538-4058-867f-3ad2a49415e9 = calculated
+	partition DateTableTemplate_ad652747-3c4a-4fee-b3b7-2eac6fec5563 = calculated
 		mode: import
 		source = Calendar(Date(2015,1,1), Date(2015,1,1))
 

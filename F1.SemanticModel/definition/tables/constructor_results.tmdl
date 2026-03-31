@@ -1,10 +1,10 @@
 table constructor_results
-	lineageTag: 67fe52ca-19cb-438f-843e-6a773515bce7
+	lineageTag: 23d0199c-e726-437e-8593-777521ddf369
 
 	column constructorResultsId
 		dataType: int64
 		formatString: 0
-		lineageTag: 3732a705-a7c4-4476-858f-729420d3555c
+		lineageTag: 82332bea-6c76-406a-b355-0b1ba2c3c886
 		summarizeBy: count
 		sourceColumn: constructorResultsId
 
@@ -13,7 +13,7 @@ table constructor_results
 	column raceId
 		dataType: int64
 		formatString: 0
-		lineageTag: d47ef460-cf3b-4ac9-8a60-6d4d2d90f2ec
+		lineageTag: 74a1d2bf-73d0-457c-842b-dec1cfbb412b
 		summarizeBy: none
 		sourceColumn: raceId
 
@@ -22,7 +22,7 @@ table constructor_results
 	column constructorId
 		dataType: int64
 		formatString: 0
-		lineageTag: b7889b8e-842d-403d-b5a9-e54eb5a0c0dd
+		lineageTag: f3edb3ae-b17a-4061-ba6a-3b90906172e1
 		summarizeBy: none
 		sourceColumn: constructorId
 
@@ -31,7 +31,7 @@ table constructor_results
 	column points
 		dataType: int64
 		formatString: 0
-		lineageTag: a255668d-fe75-421a-a50b-569396545dc8
+		lineageTag: f8b7848f-77c6-4436-821b-172d5ebe364c
 		summarizeBy: sum
 		sourceColumn: points
 
@@ -39,7 +39,7 @@ table constructor_results
 
 	column status
 		dataType: string
-		lineageTag: 375117cb-4cbc-43d9-9bed-c2dc5334a893
+		lineageTag: 0f6e083f-5718-4c3b-a428-a5c1a4b2ec46
 		summarizeBy: none
 		sourceColumn: status
 
@@ -49,13 +49,11 @@ table constructor_results
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(File.Contents("C:\MySQL\f1\constructor_results.csv"),[Delimiter=",", Columns=5, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    Source = Csv.Document(Web.Contents("https://ltimindtree.sharepoint.com/sites/01LOrealAPACDelivery/Shared%20Documents/General/Trainings%20-%20BI%20Team/Trainee_Batch_3/Git%20RND/Dataset/constructor_results.csv"),[Delimiter=",", Columns=5, Encoding=1252, QuoteStyle=QuoteStyle.None]),
 				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"constructorResultsId", Int64.Type}, {"raceId", Int64.Type}, {"constructorId", Int64.Type}, {"points", Int64.Type}, {"status", type text}})
 				in
 				    #"Changed Type"
-
-	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
 

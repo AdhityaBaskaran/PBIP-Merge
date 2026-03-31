@@ -3,7 +3,7 @@
   "name": "5a1ae88d8e5917babce9",
   "position": {
     "x": 1043.157627626935,
-    "y": 69.921797503979334,
+    "y": 11,
     "z": 10000,
     "height": 77.480910747652771,
     "width": 221.10406237744817,
@@ -82,5 +82,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f4d117d4af73ff887f8d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "circuits"
+              }
+            },
+            "Property": "country"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

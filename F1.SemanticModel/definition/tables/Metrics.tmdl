@@ -1,0 +1,28 @@
+table Metrics
+	lineageTag: 27e469b5-1aa2-4876-bbec-b33d0519e1aa
+
+	measure Racecount = COUNT(driver_standings[raceId])
+		formatString: 0
+		lineageTag: 88aeb60e-21ef-4c41-9114-3344dc8645e1
+
+	measure 'Win Rate' = DIVIDE([Wincount], [Racecount])
+		lineageTag: fb76a2c0-401e-4a46-9189-39e3349f81d9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Wincount = COUNT(driver_standings[wins])
+		formatString: 0
+		lineageTag: 6e292253-6078-445e-b8a0-da8703fd7343
+
+	partition Metrics = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

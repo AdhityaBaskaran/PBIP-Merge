@@ -5,16 +5,29 @@
       "ordinal": 0,
       "scrollPosition": {
         "x": 0,
-        "y": 0
+        "y": 909.81522892728674
       },
       "nodes": [
         {
           "location": {
-            "x": 1364.7486826493523,
-            "y": 674.86651444304425
+            "x": 1480.217844146536,
+            "y": 2693.7366495228739
+          },
+          "nodeIndex": "Metrics",
+          "nodeLineageTag": "27e469b5-1aa2-4876-bbec-b33d0519e1aa",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 14
+        },
+        {
+          "location": {
+            "x": 284,
+            "y": 2260.3599213932348
           },
           "nodeIndex": "circuits",
-          "nodeLineageTag": "5fe84809-f719-4a64-87d0-381599632eb8",
+          "nodeLineageTag": "19f8b178-bf23-4314-9c83-8684bbe6a831",
           "size": {
             "height": 296,
             "width": 234
@@ -23,11 +36,11 @@
         },
         {
           "location": {
-            "x": 622.23318589772725,
-            "y": 1141.449249690043
+            "x": 1480.217844146536,
+            "y": 2344.3599213932348
           },
           "nodeIndex": "constructor_results",
-          "nodeLineageTag": "67fe52ca-19cb-438f-843e-6a773515bce7",
+          "nodeLineageTag": "23d0199c-e726-437e-8593-777521ddf369",
           "size": {
             "height": 200,
             "width": 234
@@ -36,11 +49,11 @@
         },
         {
           "location": {
-            "x": 909.00752307182961,
-            "y": 930.10753748958609
+            "x": 1480.217844146536,
+            "y": 2266.0157393608251
           },
           "nodeIndex": "constructor_standings",
-          "nodeLineageTag": "d801ef17-f4cb-4fdc-bf7e-9e230148343c",
+          "nodeLineageTag": "9867c4f0-55cf-418e-8a59-861b9df73c31",
           "size": {
             "height": 248,
             "width": 234
@@ -49,11 +62,11 @@
         },
         {
           "location": {
-            "x": 413.92557724196536,
-            "y": 880.45278388223142
+            "x": 1480.217844146536,
+            "y": 2208.49946631221
           },
           "nodeIndex": "constructors",
-          "nodeLineageTag": "d9a519bd-7460-46ae-b440-8f798915f9d1",
+          "nodeLineageTag": "ab1b74ce-13d1-4031-b52b-cd05aebd339e",
           "size": {
             "height": 200,
             "width": 234
@@ -62,11 +75,11 @@
         },
         {
           "location": {
-            "x": 1420.3172041716903,
-            "y": 36.338607115888635
+            "x": 1480.217844146536,
+            "y": 2088.1552842798005
           },
           "nodeIndex": "driver_standings",
-          "nodeLineageTag": "af81b514-516b-4ada-af76-fd47e2e207b7",
+          "nodeLineageTag": "bc58b2ec-0d30-4d2a-a406-8ea1fdf0f55f",
           "size": {
             "height": 248,
             "width": 234
@@ -75,11 +88,11 @@
         },
         {
           "location": {
-            "x": 762.09382967544207,
-            "y": 98.552667648242448
+            "x": 1480.217844146536,
+            "y": 1966.8459884771346
           },
           "nodeIndex": "drivers",
-          "nodeLineageTag": "f2569d52-f26b-451a-ad98-f614efaf77d9",
+          "nodeLineageTag": "5a96167f-6adb-44c9-b798-95df08672889",
           "size": {
             "height": 296,
             "width": 234
@@ -88,11 +101,11 @@
         },
         {
           "location": {
-            "x": 1043.0467541935723,
-            "y": -50
+            "x": 1480.217844146536,
+            "y": 1887.4506471663658
           },
           "nodeIndex": "lap_times",
-          "nodeLineageTag": "23ee8c69-630c-40e0-8fa4-85071e0affe9",
+          "nodeLineageTag": "7798f8f7-2fb9-4b54-8af9-e49e6010ba5e",
           "size": {
             "height": 224,
             "width": 234
@@ -101,11 +114,11 @@
         },
         {
           "location": {
-            "x": 1273.2815916113884,
-            "y": 373.38829089983926
+            "x": 1764.217844146536,
+            "y": 1875.4506471663658
           },
           "nodeIndex": "pit_stops",
-          "nodeLineageTag": "7f89af12-7246-4acb-ba99-d9272c6cb978",
+          "nodeLineageTag": "a91fef20-4173-442d-b900-105c4eb29574",
           "size": {
             "height": 248,
             "width": 234
@@ -114,11 +127,11 @@
         },
         {
           "location": {
-            "x": 700.88305769134422,
-            "y": 576.61573529112331
+            "x": 1764.217844146536,
+            "y": 1693.7279819049309
           },
           "nodeIndex": "qualifying",
-          "nodeLineageTag": "73d2df69-4a4a-4bca-85f4-7ebea67b9204",
+          "nodeLineageTag": "d5073d9b-6d31-410d-9e85-aa39da36e891",
           "size": {
             "height": 296,
             "width": 234
@@ -127,11 +140,11 @@
         },
         {
           "location": {
-            "x": 987.34451658922626,
-            "y": 576.90507650933785
+            "x": 1764.217844146536,
+            "y": 1523.1564813158038
           },
           "nodeIndex": "races",
-          "nodeLineageTag": "94e1bbd7-58ce-4ec8-9050-615fbfd18c97",
+          "nodeLineageTag": "1eab41af-960e-4b28-bc12-d08693f832a0",
           "size": {
             "height": 300,
             "width": 234
@@ -140,11 +153,11 @@
         },
         {
           "location": {
-            "x": 337.046112424523,
-            "y": 527.938778306615
+            "x": 1764.217844146536,
+            "y": 1310.154314411318
           },
           "nodeIndex": "results",
-          "nodeLineageTag": "ad88cc72-d54f-43ed-8af3-33810e0888e8",
+          "nodeLineageTag": "11d6739a-a776-40b0-9b5b-e2cb903cba02",
           "size": {
             "height": 300,
             "width": 234
@@ -153,11 +166,11 @@
         },
         {
           "location": {
-            "x": 1654.3172041716903,
-            "y": 631.72462484502148
+            "x": 1764.217844146536,
+            "y": 1140.5092723595506
           },
           "nodeIndex": "seasons",
-          "nodeLineageTag": "a9741ffd-93c5-4b4b-a308-dc39d9e3ae0e",
+          "nodeLineageTag": "9c6eb42e-b04b-4b9c-9279-de6ca4284aca",
           "size": {
             "height": 128,
             "width": 234
@@ -166,11 +179,11 @@
         },
         {
           "location": {
-            "x": 429.72559799117653,
-            "y": 174.367729222035
+            "x": 2048.2178441465358,
+            "y": 1054.5092723595506
           },
           "nodeIndex": "sprint_results",
-          "nodeLineageTag": "9a740a66-0316-4e28-a99c-62e3f82baf64",
+          "nodeLineageTag": "637d722c-dd1a-4414-bdd4-f3db8b79b8db",
           "size": {
             "height": 300,
             "width": 234
@@ -179,11 +192,11 @@
         },
         {
           "location": {
-            "x": 50,
-            "y": 442.47847801656189
+            "x": 2048.2178441465358,
+            "y": 0
           },
           "nodeIndex": "status",
-          "nodeLineageTag": "50522ad1-d07f-4f33-91f8-2db44202fc0c",
+          "nodeLineageTag": "40789869-60e5-4c6d-9d93-10f74da62acc",
           "size": {
             "height": 128,
             "width": 234
@@ -192,7 +205,7 @@
         }
       ],
       "name": "All tables",
-      "zoomValue": 30.30609322401925,
+      "zoomValue": 43.012397579589766,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,
