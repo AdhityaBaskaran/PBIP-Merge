@@ -1,7 +1,7 @@
 table Metrics
 	lineageTag: 27e469b5-1aa2-4876-bbec-b33d0519e1aa
 
-	measure Racecount = COUNT(driver_standings[raceId])
+	measure Racecount = COUNT(qualifying[raceId])
 		formatString: 0
 		lineageTag: 88aeb60e-21ef-4c41-9114-3344dc8645e1
 

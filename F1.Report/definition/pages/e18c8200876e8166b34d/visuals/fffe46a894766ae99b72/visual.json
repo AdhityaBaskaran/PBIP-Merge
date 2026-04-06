@@ -46,7 +46,7 @@
                 "Property": "name"
               }
             },
-            "direction": "Ascending"
+            "direction": "Descending"
           }
         ]
       }

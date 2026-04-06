@@ -270,7 +270,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Driver Name": {
+			          "Racer with most wins": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -280,7 +280,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Racer with most wins": {
+			          "Driver Name": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
