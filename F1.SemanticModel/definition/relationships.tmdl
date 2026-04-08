@@ -88,13 +88,6 @@ relationship AutoDetected_f61c95c8-8c17-433d-90d9-37eddbf4cb9c
 	fromColumn: sprint_results.driverId
 	toColumn: drivers.driverId
 
-relationship AutoDetected_e82072d4-f891-4c44-9359-ea133886370b
-	isActive: false
-	crossFilteringBehavior: bothDirections
-	fromCardinality: one
-	fromColumn: sprint_results.resultId
-	toColumn: results.resultId
-
 relationship AutoDetected_7742de3c-8bf3-4cc4-b2b2-82ae92a44975
 	fromColumn: results.statusId
 	toColumn: status.statusId
