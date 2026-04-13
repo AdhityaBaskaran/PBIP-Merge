@@ -42,7 +42,8 @@
                 }
               },
               "queryRef": "Metrics.Racecount",
-              "nativeQueryRef": "Race Count"
+              "nativeQueryRef": "RaceCount",
+              "displayName": "RaceCount"
             }
           ]
         }
