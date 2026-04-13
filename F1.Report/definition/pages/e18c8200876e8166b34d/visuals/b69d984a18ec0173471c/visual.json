@@ -249,14 +249,14 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Drivers with most wins by Nationality'"
+                  "Value": "'Drivers With Most Wins By Nationality'"
                 }
               }
             },
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "13D"
+                  "Value": "12D"
                 }
               }
             },

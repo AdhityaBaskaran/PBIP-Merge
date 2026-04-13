@@ -83,6 +83,32 @@
             }
           }
         }
+      ],
+      "categoryAxis": [
+        {
+          "properties": {
+            "titleFontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "titleFontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -142,7 +168,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'How starting position affects the points'"
+                  "Value": "'How Starting Position Affects The Points'"
                 }
               }
             },
