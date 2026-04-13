@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "0db5cdc75b19f69f6461",
   "position": {
-    "x": 947.89227555867717,
-    "y": 180.19038465093067,
+    "x": 938.61081293363,
+    "y": 181,
     "z": 12003,
-    "height": 152.93469621633611,
-    "width": 314.9546219108704,
+    "height": 153.21796046602958,
+    "width": 324.53253043592093,
     "tabOrder": 12003
   },
   "visual": {
@@ -37,11 +37,11 @@
                       "Entity": "Metrics"
                     }
                   },
-                  "Property": "Racecount"
+                  "Property": "Race Count"
                 }
               },
               "queryRef": "Metrics.Racecount",
-              "nativeQueryRef": "Racecount"
+              "nativeQueryRef": "Race Count"
             }
           ]
         }
@@ -131,6 +131,36 @@
                 }
               }
             }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "109.49053809823094D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Metrics.Racecount"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "187.01896631344226D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "drivers.Full Name"
           }
         }
       ]

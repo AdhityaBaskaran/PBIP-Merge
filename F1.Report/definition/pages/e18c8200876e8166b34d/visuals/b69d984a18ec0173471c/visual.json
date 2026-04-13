@@ -3,7 +3,7 @@
   "name": "b69d984a18ec0173471c",
   "position": {
     "x": 11.134276838108388,
-    "y": 319.712806351398,
+    "y": 318,
     "z": 2000,
     "height": 389,
     "width": 470.82084915429749,
@@ -23,11 +23,11 @@
                       "Entity": "drivers"
                     }
                   },
-                  "Property": "nationality"
+                  "Property": "Nationality"
                 }
               },
               "queryRef": "drivers.nationality",
-              "nativeQueryRef": "nationality",
+              "nativeQueryRef": "Nationality",
               "active": true
             }
           ]
@@ -110,7 +110,7 @@
                             "Entity": "drivers"
                           }
                         },
-                        "Property": "nationality"
+                        "Property": "Nationality"
                       }
                     },
                     "Right": {
@@ -152,7 +152,7 @@
                             "Entity": "drivers"
                           }
                         },
-                        "Property": "nationality"
+                        "Property": "Nationality"
                       }
                     },
                     "Right": {
@@ -194,7 +194,7 @@
                             "Entity": "drivers"
                           }
                         },
-                        "Property": "nationality"
+                        "Property": "Nationality"
                       }
                     },
                     "Right": {
@@ -303,7 +303,7 @@
                 "Entity": "drivers"
               }
             },
-            "Property": "nationality"
+            "Property": "Nationality"
           }
         },
         "type": "TopN",
@@ -336,7 +336,7 @@
                               "Source": "d"
                             }
                           },
-                          "Property": "nationality"
+                          "Property": "Nationality"
                         },
                         "Name": "field"
                       }
@@ -351,7 +351,7 @@
                                 "Source": "m"
                               }
                             },
-                            "Property": "Wincount"
+                            "Property": "Win Count"
                           }
                         }
                       }
@@ -380,7 +380,7 @@
                             "Source": "d"
                           }
                         },
-                        "Property": "nationality"
+                        "Property": "Nationality"
                       }
                     }
                   ],

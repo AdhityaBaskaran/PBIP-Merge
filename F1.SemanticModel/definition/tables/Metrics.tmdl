@@ -1,18 +1,22 @@
 table Metrics
 	lineageTag: 27e469b5-1aa2-4876-bbec-b33d0519e1aa
 
-	measure Racecount = COUNT(qualifying[raceId])
+	measure 'Race Count' = COUNT(qualifying[raceId])
 		formatString: 0
 		lineageTag: 88aeb60e-21ef-4c41-9114-3344dc8645e1
 
-	measure 'Win Rate' = DIVIDE([Wincount], [Racecount])
+	measure 'Win Rate' = DIVIDE([Win Count], [Race Count])
 		lineageTag: fb76a2c0-401e-4a46-9189-39e3349f81d9
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure Wincount = COUNT(driver_standings[wins])
+	measure 'Win Count' = COUNT(driver_standings[wins])
 		formatString: 0
 		lineageTag: 6e292253-6078-445e-b8a0-da8703fd7343
+
+	measure 'Total points' = SUM(driver_standings[points])
+		formatString: 0
+		lineageTag: a00f9360-b374-4c89-b030-518d5cef6e54
 
 	partition Metrics = m
 		mode: import

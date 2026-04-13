@@ -23,11 +23,11 @@
                       "Entity": "drivers"
                     }
                   },
-                  "Property": "nationality"
+                  "Property": "Nationality"
                 }
               },
               "queryRef": "drivers.nationality",
-              "nativeQueryRef": "nationality",
+              "nativeQueryRef": "Nationality",
               "active": true
             }
           ]
@@ -127,7 +127,7 @@
                 "Entity": "drivers"
               }
             },
-            "Property": "nationality"
+            "Property": "Nationality"
           }
         },
         "type": "Categorical"

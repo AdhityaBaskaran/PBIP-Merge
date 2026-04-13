@@ -66,11 +66,11 @@ table drivers
 
 		annotation UnderlyingDateTimeDataType = Date
 
-	column nationality
+	column Nationality
 		dataType: string
 		lineageTag: f108afe5-a842-4a35-8dee-5d646eb5d799
 		summarizeBy: none
-		sourceColumn: nationality
+		sourceColumn: Nationality
 
 		annotation SummarizationSetBy = Automatic
 
@@ -94,9 +94,10 @@ table drivers
 				let
 				    Source = Csv.Document(Web.Contents("https://ltimindtree.sharepoint.com/sites/01LOrealAPACDelivery/Shared%20Documents/General/Trainings%20-%20BI%20Team/Trainee_Batch_3/Git%20RND/Dataset/drivers.csv"),[Delimiter=",", Columns=9, Encoding=65001, QuoteStyle=QuoteStyle.None]),
 				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"driverId", Int64.Type}, {"driverRef", type text}, {"number", type text}, {"code", type text}, {"forename", type text}, {"surname", type text}, {"dob", type date}, {"nationality", type text}, {"url", type text}})
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"driverId", Int64.Type}, {"driverRef", type text}, {"number", type text}, {"code", type text}, {"forename", type text}, {"surname", type text}, {"dob", type date}, {"nationality", type text}, {"url", type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"nationality", "Nationality"}})
 				in
-				    #"Changed Type"
+				    #"Renamed Columns"
 
 	annotation PBI_ResultType = Table
 
