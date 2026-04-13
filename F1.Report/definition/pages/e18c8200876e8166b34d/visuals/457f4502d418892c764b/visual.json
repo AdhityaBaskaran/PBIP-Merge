@@ -27,8 +27,8 @@
                 }
               },
               "queryRef": "drivers.nationality",
-              "nativeQueryRef": "Nationality With Most Wins",
-              "displayName": "Nationality With Most Wins"
+              "nativeQueryRef": "Nationality With Most Win",
+              "displayName": "Nationality With Most Win"
             }
           ]
         }
@@ -46,7 +46,7 @@
                 "Property": "Nationality"
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
           }
         ]
       }
