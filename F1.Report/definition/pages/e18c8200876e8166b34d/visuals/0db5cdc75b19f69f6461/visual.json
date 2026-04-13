@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "drivers.Full Name",
-              "nativeQueryRef": "Full Name"
+              "nativeQueryRef": "Name",
+              "displayName": "Name"
             },
             {
               "field": {
@@ -41,8 +42,8 @@
                 }
               },
               "queryRef": "Metrics.Racecount",
-              "nativeQueryRef": "RaceCount",
-              "displayName": "RaceCount"
+              "nativeQueryRef": "Race Count",
+              "displayName": "Race Count"
             }
           ]
         }
