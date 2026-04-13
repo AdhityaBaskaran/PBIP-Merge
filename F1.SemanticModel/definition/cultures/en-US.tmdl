@@ -270,7 +270,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Racer with most wins": {
+			          "Racer With Most Wins": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -753,7 +753,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Best location for F1": {
+			          "Best Location For F1": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -2480,6 +2480,16 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.714
 			          }
+			        },
+			        {
+			          "Team With Most Wins": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ],
 			      "NameType": "Name"
@@ -4031,7 +4041,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Nationality with most wins": {
+			          "Nationality With Most Wins": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -5506,16 +5516,6 @@ cultureInfo en-US
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.714
-			          }
-			        },
-			        {
-			          "Most frequent race": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -15264,6 +15264,39 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
+			    "qualifying_has_metrics_win_rate": {
+			      "Binding": {
+			        "ConceptualEntity": "qualifying"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "qualifying": {
+			          "Target": {
+			            "Entity": "qualifying"
+			          }
+			        },
+			        "metrics.win_rate": {
+			          "Target": {
+			            "Entity": "metrics.win_rate"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "qualifying"
+			            },
+			            "Object": {
+			              "Role": "metrics.win_rate"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "qualifying_have_win_rate"
+			        }
+			      ]
+			    },
 			    "driver_standing_has_metrics_win_rate": {
 			      "Binding": {
 			        "ConceptualEntity": "driver_standings"
@@ -15297,15 +15330,15 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "driver_standing_has_metrics_racecount": {
+			    "qualifying_has_metrics_racecount": {
 			      "Binding": {
-			        "ConceptualEntity": "driver_standings"
+			        "ConceptualEntity": "qualifying"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "driver_standing": {
+			        "qualifying": {
 			          "Target": {
-			            "Entity": "driver_standing"
+			            "Entity": "qualifying"
 			          }
 			        },
 			        "metrics.racecount": {
@@ -15318,7 +15351,7 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "driver_standing"
+			              "Role": "qualifying"
 			            },
 			            "Object": {
 			              "Role": "metrics.racecount"
@@ -15326,7 +15359,7 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "driver_standing_have_racecount"
+			          "ID": "qualifying_have_racecount"
 			        }
 			      ]
 			    },

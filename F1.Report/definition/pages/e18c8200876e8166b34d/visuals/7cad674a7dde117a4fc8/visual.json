@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "7cad674a7dde117a4fc8",
   "position": {
-    "x": 1043.75,
-    "y": 84.375,
+    "x": 1046,
+    "y": 96,
     "z": 12002,
-    "height": 76.5625,
-    "width": 220.3125,
+    "height": 74,
+    "width": 221,
     "tabOrder": 12002
   },
   "visual": {
@@ -27,8 +27,8 @@
                 }
               },
               "queryRef": "circuits.location",
-              "nativeQueryRef": "Best location for F1",
-              "displayName": "Best location for F1"
+              "nativeQueryRef": "Best Location For F1",
+              "displayName": "Best Location For F1"
             }
           ]
         }
@@ -66,7 +66,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "14D"
+                  "Value": "12D"
                 }
               }
             },
@@ -116,6 +116,37 @@
               "expr": {
                 "Literal": {
                   "Value": "'Racers with most wins'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#bcb9b9'"
+                    }
+                  }
                 }
               }
             }

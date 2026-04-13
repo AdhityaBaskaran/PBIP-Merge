@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "fffe46a894766ae99b72",
   "position": {
-    "x": 601.5625,
-    "y": 84.375,
+    "x": 582,
+    "y": 96,
     "z": 12000,
-    "height": 64.0625,
-    "width": 203.125,
+    "height": 74,
+    "width": 221,
     "tabOrder": 12000
   },
   "visual": {
@@ -20,35 +20,18 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "races"
+                      "Entity": "constructors"
                     }
                   },
                   "Property": "name"
                 }
               },
-              "queryRef": "races.name",
-              "nativeQueryRef": "Most frequent race ",
-              "displayName": "Most frequent race "
+              "queryRef": "constructors.name",
+              "nativeQueryRef": "Team With Most Wins",
+              "displayName": "Team With Most Wins"
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "races"
-                  }
-                },
-                "Property": "name"
-              }
-            },
-            "direction": "Descending"
-          }
-        ]
       }
     },
     "objects": {
@@ -83,7 +66,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "13D"
+                  "Value": "12D"
                 }
               }
             },
@@ -151,6 +134,37 @@
             }
           }
         }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#bcb9b9'"
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
@@ -179,13 +193,13 @@
         "howCreated": "User"
       },
       {
-        "name": "4dc2a5c1fd774498606c",
+        "name": "e87325e6a003d73ac387",
         "ordinal": 1,
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "races"
+                "Entity": "constructors"
               }
             },
             "Property": "name"
@@ -203,8 +217,13 @@
                     "Version": 2,
                     "From": [
                       {
-                        "Name": "r",
-                        "Entity": "races",
+                        "Name": "c",
+                        "Entity": "constructors",
+                        "Type": 0
+                      },
+                      {
+                        "Name": "c1",
+                        "Entity": "constructor_standings",
                         "Type": 0
                       }
                     ],
@@ -213,7 +232,7 @@
                         "Column": {
                           "Expression": {
                             "SourceRef": {
-                              "Source": "r"
+                              "Source": "c"
                             }
                           },
                           "Property": "name"
@@ -230,13 +249,13 @@
                               "Column": {
                                 "Expression": {
                                   "SourceRef": {
-                                    "Source": "r"
+                                    "Source": "c1"
                                   }
                                 },
-                                "Property": "raceId"
+                                "Property": "wins"
                               }
                             },
-                            "Function": 5
+                            "Function": 0
                           }
                         }
                       }
@@ -248,8 +267,8 @@
               "Type": 2
             },
             {
-              "Name": "r",
-              "Entity": "races",
+              "Name": "c",
+              "Entity": "constructors",
               "Type": 0
             }
           ],
@@ -262,7 +281,7 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Source": "r"
+                            "Source": "c"
                           }
                         },
                         "Property": "name"
@@ -279,22 +298,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "4bd3703452294a08afcc",
-        "ordinal": 2,
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "races"
-              }
-            },
-            "Property": "raceId"
-          }
-        },
-        "type": "Advanced",
-        "howCreated": "User"
       }
     ],
     "filterSortOrder": "Custom"
