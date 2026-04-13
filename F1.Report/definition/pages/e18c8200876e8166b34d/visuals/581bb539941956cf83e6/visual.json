@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "581bb539941956cf83e6",
   "position": {
-    "x": 492,
-    "y": 439,
+    "x": 491.8604651162791,
+    "y": 438.95348837209303,
     "z": 4000,
-    "height": 264.99222878458193,
-    "width": 438.3114703139571,
+    "height": 268.02325581395348,
+    "width": 438.37209302325584,
     "tabOrder": 4000
   },
   "visual": {
@@ -163,7 +163,7 @@
             "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Number OF Drivers'"
+                  "Value": "'Number Of Drivers'"
                 }
               }
             },
