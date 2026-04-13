@@ -5,8 +5,8 @@
     "x": 492,
     "y": 439,
     "z": 4000,
-    "height": 268.81325509147393,
-    "width": 437.41801863997233,
+    "height": 264.99222878458193,
+    "width": 438.3114703139571,
     "tabOrder": 4000
   },
   "visual": {
@@ -108,7 +108,42 @@
             "showAxisTitle": {
               "expr": {
                 "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "titleFontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'wf_standard-font, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "titleFontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "titleUnderline": {
+              "expr": {
+                "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "titleBold": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Year'"
                 }
               }
             }
@@ -121,7 +156,21 @@
             "showAxisTitle": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
+                }
+              }
+            },
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Number OF Drivers'"
+                }
+              }
+            },
+            "titleFontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
                 }
               }
             }
@@ -168,7 +217,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'No of Drivers by year '"
+                  "Value": "'No Of Drivers By Year '"
                 }
               }
             },
@@ -210,5 +259,42 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "a4bef997d3090b271ecb",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "races"
+              }
+            },
+            "Property": "year"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b3c80e1f33dc8e4c4b9b",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "driver_standings"
+                  }
+                },
+                "Property": "driverId"
+              }
+            },
+            "Function": 5
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
