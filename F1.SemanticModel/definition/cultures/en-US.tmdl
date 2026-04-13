@@ -54,6 +54,16 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.727
 			          }
+			        },
+			        {
+			          "RaceCount": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -4061,7 +4071,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Nationality With Most Win": {
+			          "Nationality With Most Wins": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -11162,6 +11172,52 @@ cultureInfo en-US
 			    }
 			  },
 			  "Relationships": {
+			    "pit_stop_has_race": {
+			      "Binding": {
+			        "ConceptualEntity": "pit_stops"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "pit_stop": {
+			          "Target": {
+			            "Entity": "pit_stop"
+			          }
+			        },
+			        "race": {
+			          "Target": {
+			            "Entity": "race"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "pit_stop"
+			            },
+			            "Object": {
+			              "Role": "race"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "pit_stops_have_races"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "race"
+			            },
+			            "Object": {
+			              "Role": "pit_stop"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "races_have_pit_stops"
+			        }
+			      ]
+			    },
 			    "pit_stop_has_driver": {
 			      "Binding": {
 			        "ConceptualEntity": "pit_stops"
@@ -15718,52 +15774,6 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.75,
 			          "ID": "constructors_construct"
-			        }
-			      ]
-			    },
-			    "pit_stop_has_race": {
-			      "Binding": {
-			        "ConceptualEntity": "pit_stops"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "pit_stop": {
-			          "Target": {
-			            "Entity": "pit_stop"
-			          }
-			        },
-			        "race": {
-			          "Target": {
-			            "Entity": "race"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "pit_stop"
-			            },
-			            "Object": {
-			              "Role": "race"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "pit_stops_have_races"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "race"
-			            },
-			            "Object": {
-			              "Role": "pit_stop"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "races_have_pit_stops"
 			        }
 			      ]
 			    },
