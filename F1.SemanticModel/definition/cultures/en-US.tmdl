@@ -5,7 +5,7 @@ cultureInfo en-US
 			  "Version": "4.1.0",
 			  "Language": "en-US",
 			  "Entities": {
-			    "metrics.wincount": {
+			    "metrics.win_count": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "Metrics",
@@ -15,13 +15,23 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "wincount": {
+			          "win count": {
 			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "win amount": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
 			          }
 			        }
 			      ]
 			    },
-			    "metrics.racecount": {
+			    "metrics.race_count": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "Metrics",
@@ -31,8 +41,18 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "racecount": {
+			          "race count": {
 			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "race amount": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
 			          }
 			        }
 			      ]
@@ -11017,55 +11037,131 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "metrics.total_points": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Total points"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "total points": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "points": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "aggregate point": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "overall point": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "total opinion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "total fact": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "total idea": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "total argument": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "total topic": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "opinion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "fact": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "idea": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
-			    "pit_stop_has_race": {
-			      "Binding": {
-			        "ConceptualEntity": "pit_stops"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "pit_stop": {
-			          "Target": {
-			            "Entity": "pit_stop"
-			          }
-			        },
-			        "race": {
-			          "Target": {
-			            "Entity": "race"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "pit_stop"
-			            },
-			            "Object": {
-			              "Role": "race"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "pit_stops_have_races"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "race"
-			            },
-			            "Object": {
-			              "Role": "pit_stop"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "races_have_pit_stops"
-			        }
-			      ]
-			    },
 			    "pit_stop_has_driver": {
 			      "Binding": {
 			        "ConceptualEntity": "pit_stops"
@@ -11845,6 +11941,39 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "constructors_have_constructor_results"
+			        }
+			      ]
+			    },
+			    "driver_standing_has_metrics_total_points": {
+			      "Binding": {
+			        "ConceptualEntity": "driver_standings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "driver_standing": {
+			          "Target": {
+			            "Entity": "driver_standing"
+			          }
+			        },
+			        "metrics.total_points": {
+			          "Target": {
+			            "Entity": "metrics.total_points"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "driver_standing"
+			            },
+			            "Object": {
+			              "Role": "metrics.total_points"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "driver_standing_have_total_points"
 			        }
 			      ]
 			    },
@@ -15330,7 +15459,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "qualifying_has_metrics_racecount": {
+			    "qualifying_has_metrics_race_count": {
 			      "Binding": {
 			        "ConceptualEntity": "qualifying"
 			      },
@@ -15341,9 +15470,9 @@ cultureInfo en-US
 			            "Entity": "qualifying"
 			          }
 			        },
-			        "metrics.racecount": {
+			        "metrics.race_count": {
 			          "Target": {
-			            "Entity": "metrics.racecount"
+			            "Entity": "metrics.race_count"
 			          }
 			        }
 			      },
@@ -15354,16 +15483,16 @@ cultureInfo en-US
 			              "Role": "qualifying"
 			            },
 			            "Object": {
-			              "Role": "metrics.racecount"
+			              "Role": "metrics.race_count"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "qualifying_have_racecount"
+			          "ID": "qualifying_have_race_count"
 			        }
 			      ]
 			    },
-			    "driver_standing_has_metrics_wincount": {
+			    "driver_standing_has_metrics_win_count": {
 			      "Binding": {
 			        "ConceptualEntity": "driver_standings"
 			      },
@@ -15374,9 +15503,9 @@ cultureInfo en-US
 			            "Entity": "driver_standing"
 			          }
 			        },
-			        "metrics.wincount": {
+			        "metrics.win_count": {
 			          "Target": {
-			            "Entity": "metrics.wincount"
+			            "Entity": "metrics.win_count"
 			          }
 			        }
 			      },
@@ -15387,12 +15516,12 @@ cultureInfo en-US
 			              "Role": "driver_standing"
 			            },
 			            "Object": {
-			              "Role": "metrics.wincount"
+			              "Role": "metrics.win_count"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "driver_standing_have_wincount"
+			          "ID": "driver_standing_have_win_count"
 			        }
 			      ]
 			    },
@@ -15589,6 +15718,52 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.75,
 			          "ID": "constructors_construct"
+			        }
+			      ]
+			    },
+			    "pit_stop_has_race": {
+			      "Binding": {
+			        "ConceptualEntity": "pit_stops"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "pit_stop": {
+			          "Target": {
+			            "Entity": "pit_stop"
+			          }
+			        },
+			        "race": {
+			          "Target": {
+			            "Entity": "race"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "pit_stop"
+			            },
+			            "Object": {
+			              "Role": "race"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "pit_stops_have_races"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "race"
+			            },
+			            "Object": {
+			              "Role": "pit_stop"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "races_have_pit_stops"
 			        }
 			      ]
 			    },
