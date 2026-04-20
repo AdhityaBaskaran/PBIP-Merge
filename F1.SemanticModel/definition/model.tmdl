@@ -19,17 +19,17 @@ ref table constructor_standings
 ref table constructors
 ref table driver_standings
 ref table drivers
-ref table DateTableTemplate_ad652747-3c4a-4fee-b3b7-2eac6fec5563
-ref table LocalDateTable_9d684f46-6408-4f97-8732-2b4a1d9314f7
 ref table lap_times
-ref table pit_stops
 ref table qualifying
 ref table races
-ref table LocalDateTable_abb21bec-2ec8-415a-a709-f48127e2e091
-ref table results
 ref table seasons
 ref table sprint_results
 ref table status
+ref table DateTableTemplate_ad652747-3c4a-4fee-b3b7-2eac6fec5563
+ref table LocalDateTable_9d684f46-6408-4f97-8732-2b4a1d9314f7
+ref table pit_stops
+ref table LocalDateTable_abb21bec-2ec8-415a-a709-f48127e2e091
+ref table results
 
 ref cultureInfo en-US
 
